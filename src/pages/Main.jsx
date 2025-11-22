@@ -16,22 +16,42 @@ export default function Home({ onLock }) {
   const [playMusic, setPlayMusic] = useState(false);
 
   // ---- CONTADOR SOLO DE DÍAS ----
-  useEffect(() => {
-    const fechaObjetivo = new Date("2026-03-30T00:00:00");
+const fechaObjetivo = new Date("2026-03-30T00:00:00");
 
-    function actualizarDias() {
-      const ahora = new Date();
-      const diferencia = fechaObjetivo - ahora;
+useEffect(() => {
+  function updateData() {
+    const ahora = new Date();
 
-      const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
-      setDaysLeft(dias > 0 ? dias : 0);
-    }
+    // ---- 1. DIAS RESTANTES ----
+    const diferencia = fechaObjetivo - ahora;
+    const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+    setDaysLeft(dias > 0 ? dias : 0);
 
-    actualizarDias();
-    const interval = setInterval(actualizarDias, 1000 * 60 * 60);
+    // ---- 2. MENSAJE CADA HORA ----
+    const hora = ahora.getHours();
+    const indexFrase = hora % dailyPhrases.length;
+    setCurrentPhrase(dailyPhrases[indexFrase]);
 
-    return () => clearInterval(interval);
-  }, []);
+    // ---- 3. CARTA CADA SEMANA ----
+    // semana actual según los días restantes
+    const semana = Math.floor((dias / 7));
+
+    // límite para no pasarse del array
+    const indexCarta = Math.min(
+      weeklyLetters.length - 1,
+      Math.max(0, weeklyLetters.length - 1 - semana)
+    );
+
+    setCurrentLetter(weeklyLetters[indexCarta]);
+  }
+
+  updateData();
+
+  // Actualizar cada minuto (suficiente y no consume batería)
+  const interval = setInterval(updateData, 60 * 1000);
+
+  return () => clearInterval(interval);
+}, []);
 
   return (
     <div className="fade-in" style={{ minHeight: '100vh', background: 'linear-gradient(120deg, #d4a9e6 0%, #f7dde2 60%, #e6a9b5 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
