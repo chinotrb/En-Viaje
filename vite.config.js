@@ -4,18 +4,13 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   base: '/En-Viaje/',
-
   plugins: [
     react(),
-
     VitePWA({
       registerType: 'autoUpdate',
-
-      includeAssets: [
-        'icon-192.png',
-        'icon-512.png'
-      ],
-
+      devOptions: {
+        enabled: true // ← Esto hace que SÍ funcione en localhost
+      },
       manifest: {
         name: 'En Viaje',
         short_name: 'En Viaje',
