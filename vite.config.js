@@ -9,8 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
-        enabled: true // ← Esto hace que SÍ funcione en localhost
+        enabled: true
       },
+      includeAssets: ['icon-192.png', 'icon-512.png'],
       manifest: {
         name: 'En Viaje',
         short_name: 'En Viaje',
@@ -30,7 +31,7 @@ export default defineConfig({
           }
         ]
       }
-
     })
+
   ]
 })
