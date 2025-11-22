@@ -12,12 +12,15 @@ function App() {
     if (localStorage.getItem('isUnlocked') === 'true') {
       setIsUnlocked(true)
     }
-    // Detectar el evento beforeinstallprompt
-    window.addEventListener('beforeinstallprompt', (e) => {
+    // Registrar el evento solo una vez
+    const handler = (e) => {
       e.preventDefault()
       setDeferredPrompt(e)
       setShowInstall(true)
-    })
+      console.log('beforeinstallprompt capturado, mostrando botón de instalación')
+    }
+    window.addEventListener('beforeinstallprompt', handler)
+    return () => window.removeEventListener('beforeinstallprompt', handler)
   }, [])
 
   const unlock = () => setIsUnlocked(true)
@@ -37,7 +40,7 @@ function App() {
   }
 
   // Solo mostrar el botón en móvil y si es instalable
-  const isMobile = window.matchMedia('(max-width: 600px)').matches
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 600px)').matches
 
   return (
     <>
@@ -48,16 +51,17 @@ function App() {
             position: 'fixed',
             bottom: '24px',
             right: '24px',
-            zIndex: 1000,
-            padding: '12px 20px',
+            zIndex: 9999,
+            padding: '16px 24px',
             background: '#E6A9B5',
             color: '#fff',
             border: 'none',
-            borderRadius: '24px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-            fontSize: '16px',
+            borderRadius: '32px',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+            fontSize: '18px',
             fontWeight: 'bold',
             cursor: 'pointer',
+            display: 'block',
           }}
           onClick={handleInstallClick}
         >
