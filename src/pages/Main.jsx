@@ -110,7 +110,7 @@ export default function Home({ onLock }) {
             icon={<span style={{fontSize:32, color:'#ff6b9d'}}>💗</span>}
             subtitle={`WEEK ${currentLetter.week}`}
             title={currentLetter.title}
-            signature={"Tu persona ♡"}
+            signature={"Tu chino ♡"}
           >
             <Typography sx={{ fontFamily: 'Dancing Script, cursive', fontSize: '1.25rem', color: '#333', whiteSpace: 'pre-line', mb: 2 }}>
               {currentLetter.text}
