@@ -1,7 +1,5 @@
-// src/pages/Home.jsx (ex Main.jsx)
-
 import { useState, useEffect } from 'react';
-import { dailyPhrases, weeklyLetters, departureDate, returnDate } from '../data';
+import { dailyPhrases, weeklyLetters } from '../data';
 import avionImg from '../assets/avion.png';
 import Popup from '../components/popup';
 import { Button, Box, Typography, Card, CardContent } from '@mui/material';
@@ -17,18 +15,23 @@ export default function Home({ onLock }) {
   const [showLetter, setShowLetter] = useState(false);
   const [playMusic, setPlayMusic] = useState(false);
 
+  // ---- CONTADOR SOLO DE DÍAS ----
   useEffect(() => {
-    const today = new Date();
-    const diff = Math.max(0, Math.ceil((returnDate - today) / (1000 * 60 * 60 * 24)));
-    setDaysLeft(diff);
+    const fechaObjetivo = new Date("2026-03-30T00:00:00");
 
-    const dayIndex = today.getDate() % dailyPhrases.length;
-    setCurrentPhrase(dailyPhrases[dayIndex]);
+    function actualizarDias() {
+      const ahora = new Date();
+      const diferencia = fechaObjetivo - ahora;
 
-    const weeksGone = Math.floor((today - departureDate) / (7 * 86400000));
-    setCurrentLetter(weeklyLetters[Math.min(weeksGone, 3)]);
+      const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+      setDaysLeft(dias > 0 ? dias : 0);
+    }
+
+    actualizarDias();
+    const interval = setInterval(actualizarDias, 1000 * 60 * 60);
+
+    return () => clearInterval(interval);
   }, []);
-
 
   return (
     <div className="fade-in" style={{ minHeight: '100vh', background: 'linear-gradient(120deg, #d4a9e6 0%, #f7dde2 60%, #e6a9b5 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
@@ -70,7 +73,7 @@ export default function Home({ onLock }) {
       <div className="overlay"></div>
 
       {/* Encabezado fijo */}
-      <header style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 10, background: 'rgba(255,255,255,0.7)', boxShadow: '0 2px 10px rgba(230,169,181,0.08)', padding: '12px 0' }}>
+      <header style={{ position: 'fixed', top: 0, left: 0, width: '100%', background: 'rgba(255,255,255,0.7)', boxShadow: '0 2px 10px rgba(230,169,181,0.08)', padding: '12px 0' }}>
         <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: '#E6A9B5', letterSpacing: 2 }}>A.L.L <span role="img" aria-label="corazon"></span></Typography>
       </header>
 
@@ -81,7 +84,9 @@ export default function Home({ onLock }) {
             <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>LONG DISTANCE DIARY</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
               <FlightIcon sx={{ color: '#ff6b9d', fontSize: 40, mb: 1 }} />
-              <Typography variant="h2" sx={{ color: '#d15b7f', fontWeight: 800 }}>{daysLeft} días</Typography>
+              <Typography variant="h2" sx={{ color: '#d15b7f', fontWeight: 800 }}>
+                {daysLeft}
+              </Typography>
             </Box>
             <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>PARA VOLVERTE A VER</Typography>
           </CardContent>
@@ -107,7 +112,7 @@ export default function Home({ onLock }) {
           <Popup
             open={showLetter}
             onClose={() => setShowLetter(false)}
-            icon={<span style={{fontSize:32, color:'#ff6b9d'}}>💗</span>}
+            icon={<span style={{ fontSize: 32, color: '#ff6b9d' }}>💗</span>}
             subtitle={`WEEK ${currentLetter.week}`}
             title={currentLetter.title}
             signature={"Tu chino ♡"}

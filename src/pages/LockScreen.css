@@ -65,7 +65,7 @@
 
 /* card */
 .card{
-  z-index:5;
+  /* z-index:5; */
   width: min(520px, 92%);
   padding: 28px;
   border-radius:16px;
