@@ -112,7 +112,7 @@ export default function Home({ onLock }) {
             title={currentLetter.title}
             signature={"Tu chino ♡"}
           >
-            <Typography sx={{ fontFamily: 'Dancing Script, cursive', fontSize: '1.25rem', color: '#333', whiteSpace: 'pre-line', mb: 2 }}>
+            <Typography sx={{ fontFamily: 'Times', fontSize: '1.25rem', color: '#333', whiteSpace: 'pre-line', mb: 2 }}>
               {currentLetter.text}
             </Typography>
           </Popup>
