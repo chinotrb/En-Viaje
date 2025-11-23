@@ -2,38 +2,52 @@
 export const dailyPhrases = [
   // Español
   { lang: "Español", text: "Te extraño tanto que a veces hasta me duele el pecho", flag: "Te extraño" },
+  { lang: "Español", text: "No pasa un día sin que piense en ti", flag: "Te extraño" },
   { lang: "Español", text: "Quisiera abrazarte aunque sea un ratito", flag: "Te extraño" },
-  { lang: "Español", text: "Pienso en ti más de lo que debería", flag: "Te extraño" },
+  { lang: "Español", text: "Mi corazón late más lento cuando no estás", flag: "Te extraño" },
+  { lang: "Español", text: "Eres lo primero que pienso al despertar y lo último antes de dormir", flag: "Te extraño" },
 
   // English
   { lang: "English", text: "I miss you more than words can explain", flag: "I miss you" },
-  { lang: "English", text: "Wish you were here with me right now", flag: "I miss you" },
-  { lang: "English", text: "Every hour without you feels longer", flag: "I miss you" },
+  { lang: "English", text: "Every second without you feels like forever", flag: "I miss you" },
+  { lang: "English", text: "I wish you were here so I could hold you tight", flag: "I miss you" },
+  { lang: "English", text: "My heart aches when you're not around", flag: "I miss you" },
+  { lang: "English", text: "You're always on my mind, no matter what", flag: "I miss you" },
 
   // Italiano
-  { lang: "Italiano", text: "Mi manchi più di quanto pensi", flag: "Mi manchi" },
-  { lang: "Italiano", text: "Vorrei averti qui con me adesso", flag: "Mi manchi" },
-  { lang: "Italiano", text: "Il mio cuore ti cerca ogni giorno", flag: "Mi manchi" },
+  { lang: "Italiano", text: "Mi manchi da morire", flag: "Mi manchi" },
+  { lang: "Italiano", text: "Vorrei stringerti forte in questo momento", flag: "Mi manchi" },
+  { lang: "Italiano", text: "Senza di te mi sento perso/a", flag: "Mi manchi" },
+  { lang: "Italiano", text: "Il mio cuore batte solo per te", flag: "Mi manchi" },
+  { lang: "Italiano", text: "Penso a te ogni singolo giorno", flag: "Mi manchi" },
+
+  // Francés
+  { lang: "Français", text: "Tu me manques terriblement", flag: "Tu me manques" },
+  { lang: "Français", text: "J’ai tellement envie de te serrer dans mes bras", flag: "Tu me manques" },
+  { lang: "Français", text: "Chaque jour sans toi est trop long", flag: "Tu me manques" },
+  { lang: "Français", text: "Mon cœur est vide quand tu n’es pas là", flag: "Tu me manques" },
+  { lang: "Français", text: "Je pense à toi à chaque instant", flag: "Tu me manques" },
+
+  // Portugués (añadido porque es muy romántico)
+  { lang: "Português", text: "Sinto tanto a tua falta que dói", flag: "Sinto saudade" },
+  { lang: "Português", text: "Queria te abraçar agora mesmo", flag: "Sinto saudade" },
+  { lang: "Português", text: "Não passa um dia sem que eu pense em ti", flag: "Sinto saudade" },
+  { lang: "Português", text: "Você é o meu último pensamento antes de dormir", flag: "Sinto saudade" },
 
   // Japonés
   { lang: "日本語", text: "君がいなくて寂しいよ", flag: "会いたい" },
-  { lang: "日本語", text: "毎日君に会いたいと思っている", flag: "会いたい" },
-  { lang: "日本語", text: "君の声が恋しい", flag: "会いたい" },
+  { lang: "日本語", text: "今すぐ会いたい", flag: "会いたい" },
+  { lang: "日本語", text: "毎日君のことばかり考えてる", flag: "会いたい" },
+  { lang: "日本語", text: "君の声が聞きたくてたまらない", flag: "会いたい" },
+  { lang: "日本語", text: "心が君を求めてる", flag: "会いたい" },
 
   // Coreano
   { lang: "한국어", text: "너무 보고 싶어서 미치겠어", flag: "보고 싶어" },
-  { lang: "한국어", text: "네가 옆에 있었으면 좋겠어", flag: "보고 싶어" },
-  { lang: "한국어", text: "오늘도 너 생각뿐이야", flag: "보고 싶어" },
+  { lang: "한국어", text: "당신이 옆에 있었으면 좋겠어요", flag: "보고 싶어" },
+  { lang: "한국어", text: "하루 종일 당신 생각만 해", flag: "보고 싶어" },
+  { lang: "한국어", text: "당신 목소리가 너무 그리워", flag: "보고 싶어" },
+  { lang: "한국어", text: "심장이 당신을 기다리고 있어", flag: "보고 싶어" },
 
-  // Chino
-  { lang: "中文", text: "我好想你，每一天都想你", flag: "想你" },
-  { lang: "中文", text: "没有你我觉得空空的", flag: "想你" },
-  { lang: "中文", text: "我希望你在我身边", flag: "想你" },
-
-  // Francés
-  { lang: "Français", text: "Tu me manques chaque seconde", flag: "Tu me manques" },
-  { lang: "Français", text: "J’aimerais te tenir dans mes bras", flag: "Tu me manques" },
-  { lang: "Français", text: "La distance est dure sans toi", flag: "Tu me manques" },
 ];
 
 export const weeklyLetters = [
