@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { dailyPhrases, weeklyLetters } from '../data';
 import avionImg from '../assets/avion.png';
 import Popup from '../components/popup';
@@ -14,6 +15,13 @@ export default function Home({ onLock }) {
   const [currentLetter, setCurrentLetter] = useState(weeklyLetters[0]);
   const [showLetter, setShowLetter] = useState(false);
   const [playMusic, setPlayMusic] = useState(false);
+  const [currentSong, setCurrentSong] = useState(0);
+  const audioRef = useRef(null);
+
+  // Lista de canciones (ejemplo, reemplaza con tus URLs)
+  const songs = [
+    '/En-Viaje/music/Kevin-Kaarl-Colapso.mp3',
+  ];
 
   // ---- CONTADOR SOLO DE DÍAS ----
 const fechaObjetivo = new Date("2026-03-30T00:00:00");
@@ -123,10 +131,49 @@ useEffect(() => {
           </CardContent>
         </Card>
 
-        {/* Botón carta semanal */}
-        <Button variant="outlined" startIcon={<MailOutlineIcon />} className="unique-btn" onClick={() => setShowLetter(true)}>
-          Read Weekly Letter
-        </Button>
+
+        {/* Botones en columna (excepto música) */}
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 2 }}>
+          {/* Botón carta semanal */}
+          <Button variant="outlined" startIcon={<MailOutlineIcon />} className="unique-btn" onClick={() => setShowLetter(true)}>
+            Read Weekly Letter
+          </Button>
+
+          {/* Cerrar sesión */}
+          <Button variant="contained" color="secondary" onClick={onLock} className="unique-btn" style={{ marginTop: 8 }}>Cerrar sesión</Button>
+        </Box>
+
+        {/* Botón música en esquina inferior derecha */}
+        <Box sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 10 }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              if (!playMusic) {
+                // Selecciona una canción aleatoria
+                const randomIndex = Math.floor(Math.random() * songs.length);
+                setCurrentSong(randomIndex);
+                setPlayMusic(true);
+                setTimeout(() => {
+                  if (audioRef.current) audioRef.current.play();
+                }, 100);
+              } else {
+                setPlayMusic(false);
+                if (audioRef.current) audioRef.current.pause();
+              }
+            }}
+            className="unique-btn-text"
+            sx={{ borderRadius: '50%', minWidth: 56, minHeight: 56, boxShadow: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', p: 0 }}
+          >
+            {playMusic ? <PauseIcon sx={{ fontSize: 32 }} /> : <PlayArrowIcon sx={{ fontSize: 32 }} />}
+          </Button>
+          <audio
+            ref={audioRef}
+            src={songs[currentSong]}
+            loop
+            style={{ display: 'none' }}
+          />
+        </Box>
 
         {showLetter && (
           <Popup
@@ -142,18 +189,6 @@ useEffect(() => {
             </Typography>
           </Popup>
         )}
-
-        {/* Música */}
-        <Button variant="text" onClick={() => setPlayMusic(!playMusic)} className="unique-btn-text" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
-          {playMusic ? <PauseIcon sx={{ fontSize: 28 }} /> : <PlayArrowIcon sx={{ fontSize: 28 }} />}
-          <span style={{ fontSize: '1rem', fontWeight: 500 }}>{playMusic}</span>
-        </Button>
-        {playMusic && <audio autoPlay loop src="https://example.com/romantic-music.mp3" />}
-
-        {/* Corazones */}
-        {/* ...eliminado efecto de corazones... */}
-
-        <Button variant="contained" color="secondary" onClick={onLock} className="unique-btn" style={{ marginTop: 32 }}>Cerrar sesión</Button>
       </Box>
     </div>
   );
