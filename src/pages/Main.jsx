@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useRef } from 'react';
 import { dailyPhrases, weeklyLetters } from '../data';
 import avionImg from '../assets/avion.png';
+import santaImg from '../assets/santa_volando.png';
 import Popup from '../components/popup';
 import { Button, Box, Typography, Card, CardContent } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -19,9 +20,12 @@ export default function Home({ onLock }) {
   const audioRef = useRef(null);
 
   // Lista de canciones (ejemplo, reemplaza con tus URLs)
-  const songs = [
-    '/En-Viaje/music/Kevin-Kaarl-Colapso.mp3',
-  ];
+    // Lista de canciones (agregada navideña)
+    const songs = [
+    '/En-Viaje/music/TheRed-Nosed.mp3', // archivo navideño
+    '/En-Viaje/music/ChristmasTree.mp3', // archivo navideño
+    //'/En-Viaje/music/Kevin-Kaarl-Colapso.mp3',
+    ];
 
   // ---- CONTADOR SOLO DE DÍAS ----
 const fechaObjetivo = new Date("2026-03-30T00:00:00");
@@ -74,6 +78,8 @@ useEffect(() => {
         <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '22%', left: '45%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%)', animation: 'planeMoveRight 40s linear infinite' }} />
         <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '54%', left: '60%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%) scaleX(-1)', animation: 'planeMoveLeft 55s linear infinite' }} />
         <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '68%', left: '30%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%)', animation: 'planeMoveRight 65s linear infinite' }} />
+          {/* Santa volando */}
+          <img src={santaImg} alt="santa volando" style={{ position: 'absolute', top: '10%', left: '10%', width: 120, height: 80, zIndex: 2, transform: 'translateX(-50%)', animation: 'santaFly 60s linear infinite' }} />
         <style>{`
           @keyframes cloudMoveRight {
             0% { left: 40%; opacity: 0.8; }
@@ -95,6 +101,19 @@ useEffect(() => {
             10% { opacity: 1; }
             100% { left: -20%; opacity: 0.5; }
           }
+            @keyframes santaFly {
+              0%   { left: 10%; opacity: 0.95; transform: translateX(-50%) translateY(0); }
+              10%  { opacity: 1; }
+              20%  { transform: translateX(-50%) translateY(-20px); }
+              30%  { transform: translateX(-50%) translateY(-40px); }
+              40%  { transform: translateX(-50%) translateY(-20px); }
+              50%  { transform: translateX(-50%) translateY(0); }
+              60%  { transform: translateX(-50%) translateY(20px); }
+              70%  { transform: translateX(-50%) translateY(40px); }
+              80%  { transform: translateX(-50%) translateY(20px); }
+              90%  { transform: translateX(-50%) translateY(0); }
+              100% { left: 120%; opacity: 0.7; transform: translateX(-50%) translateY(0); }
+            }
         `}</style>
       </div>
 

@@ -7,6 +7,31 @@ body {
   transition: background 2s ease;
 }
 
+/* ==== ANIMACIÓN DE NIEVE ==== */
+.snow {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+.snowflake {
+  position: absolute;
+  top: -40px;
+  color: #fff;
+  font-size: 1.2em;
+  opacity: 0.85;
+  pointer-events: none;
+  user-select: none;
+  animation: snowFall linear infinite;
+}
+
+@keyframes snowFall {
+  0% { transform: translateY(0) scale(1); opacity: 0.9; }
+  80% { opacity: 0.95; }
+  100% { transform: translateY(100vh) scale(1.1); opacity: 0.3; }
+}
+/* ==== FONDOS SEGÚN DÍAS RESTANTES ==== */
+
 .bg-far { background: linear-gradient(135deg, #e0f2fe 0%, #f7d9e7 100%); }     /* +60 días */
 .bg-medium { background: linear-gradient(135deg, #e9d5ff 0%, #fad7de 100%); } /* 30-60 */
 .bg-close { background: linear-gradient(135deg, #fecaca 0%, #ffd7ba 100%); }  /* -30 */
