@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useRef } from 'react';
-import { dailyPhrases, weeklyLetters } from '../data';
+import { dailyPhrases, weeklyLetters, motivationalMessages } from '../data';
 import avionImg from '../assets/avion.png';
 import santaImg from '../assets/santa_volando.png';
 import Popup from '../components/popup';
@@ -14,6 +14,7 @@ export default function Home({ onLock }) {
   const [daysLeft, setDaysLeft] = useState(0);
   const [hoursToThursday, setHoursToThursday] = useState(0);
   const [currentPhrase, setCurrentPhrase] = useState(dailyPhrases[0]);
+  const [currentMotivational, setCurrentMotivational] = useState(motivationalMessages[0]);
   const [currentLetter, setCurrentLetter] = useState(weeklyLetters[0]);
   const [showLetter, setShowLetter] = useState(false);
   const [playMusic, setPlayMusic] = useState(false);
@@ -66,6 +67,10 @@ useEffect(() => {
     const hora = ahora.getHours();
     const indexFrase = hora % dailyPhrases.length;
     setCurrentPhrase(dailyPhrases[indexFrase]);
+
+    // ---- MENSAJE MOTIVACIONAL CADA HORA ----
+    const indexMotivacional = hora % motivationalMessages.length;
+    setCurrentMotivational(motivationalMessages[indexMotivacional]);
 
     // ---- 3. CARTA CADA SEMANA ----
     // semana actual según los días restantes
@@ -148,36 +153,48 @@ useEffect(() => {
       </header>
 
       <Box sx={{ zIndex: 2, width: '100%', maxWidth: 480, textAlign: 'center', mt: 10 }}>
-        {/* Contador */}
-        <Card sx={{ mb: 4, boxShadow: 4, borderRadius: 4 }}>
-          <CardContent>
-            <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>LONG DISTANCE DIARY</Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
-              <FlightIcon sx={{ color: '#ff6b9d', fontSize: 40, mb: 1 }} />
-              <Typography variant="h2" sx={{ color: '#d15b7f', fontWeight: 800 }}>
-                {daysLeft}
+        {/* Mensaje motivacional y contador de días en la misma fila */}
+        <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 4, justifyContent: 'center' }}>
+          {/* Mensaje motivacional */}
+          <Card sx={{ flex: 1, boxShadow: 3, borderRadius: 4 }}>
+            <CardContent>
+              <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>REMEMBER CHU</Typography>
+              <Typography variant="h6" sx={{ color: '#d15b7f', fontWeight: 600, mt: 1 }}>
+                {currentMotivational.text}
               </Typography>
-            </Box>
-            <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>PARA VOLVERTE A VER</Typography>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+          {/* Contador */}
+          <Card sx={{ flex: 1, boxShadow: 4, borderRadius: 4 }}>
+            <CardContent>
+              <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>LONG DISTANCE DIARY</Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
+                <FlightIcon sx={{ color: '#ff6b9d', fontSize: 40, mb: 1 }} />
+                <Typography variant="h2" sx={{ color: '#d15b7f', fontWeight: 800 }}>
+                  {daysLeft}
+                </Typography>
+              </Box>
+              <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>TO SEE YOU AGAIN</Typography>
+            </CardContent>
+          </Card>
+        </Box>
         {/* Contador de horas para jueves 3 PM */}
         <Card sx={{ mb: 4, boxShadow: 3, borderRadius: 4 }}>
           <CardContent>
-            <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>HORAS PARA VERNOS</Typography>
+            <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>HOURS TO THURSDAY 3PM</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
               <Typography variant="h2" sx={{ color: '#d15b7f', fontWeight: 800 }}>
                 {hoursToThursday}
               </Typography>
             </Box>
-            <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>SOLO LAS HORAS</Typography>
+            <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>ALMOST THERE</Typography>
           </CardContent>
         </Card>
 
         {/* Frase diaria */}
         <Card sx={{ mb: 4, boxShadow: 3, borderRadius: 4 }}>
           <CardContent>
-            <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>{currentPhrase.lang.toUpperCase()}</Typography>
+            <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>DON'T FORGET</Typography>
             <Typography variant="h5" sx={{ fontStyle: 'italic', color: '#333', mb: 1 }}>
               "{currentPhrase.text}"
             </Typography>
