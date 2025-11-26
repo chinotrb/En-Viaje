@@ -12,6 +12,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export default function Home({ onLock }) {
   const [daysLeft, setDaysLeft] = useState(0);
+  const [hoursToThursday, setHoursToThursday] = useState(0);
   const [currentPhrase, setCurrentPhrase] = useState(dailyPhrases[0]);
   const [currentLetter, setCurrentLetter] = useState(weeklyLetters[0]);
   const [showLetter, setShowLetter] = useState(false);
@@ -31,6 +32,22 @@ export default function Home({ onLock }) {
 const fechaObjetivo = new Date("2026-03-30T00:00:00");
 
 useEffect(() => {
+  function getNextThursday3PM(now) {
+    // Día de la semana: 0=Domingo, 1=Lunes, ..., 4=Jueves
+    const dayOfWeek = now.getDay();
+    // Calcular días hasta el próximo jueves
+    let daysUntilThursday = (4 - dayOfWeek + 7) % 7;
+    // Si hoy es jueves y ya pasaron las 3 PM, ir al siguiente jueves
+    if (daysUntilThursday === 0 && now.getHours() >= 15) {
+      daysUntilThursday = 7;
+    }
+    // Crear la fecha objetivo
+    const nextThursday = new Date(now);
+    nextThursday.setDate(now.getDate() + daysUntilThursday);
+    nextThursday.setHours(15, 0, 0, 0); // 3 PM
+    return nextThursday;
+  }
+
   function updateData() {
     const ahora = new Date();
 
@@ -38,6 +55,12 @@ useEffect(() => {
     const diferencia = fechaObjetivo - ahora;
     const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
     setDaysLeft(dias > 0 ? dias : 0);
+
+    // ---- CONTADOR DE HORAS HASTA JUEVES 3 PM ----
+    const nextThursday = getNextThursday3PM(ahora);
+    const diffMs = nextThursday - ahora;
+    const hours = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60)));
+    setHoursToThursday(hours);
 
     // ---- 2. MENSAJE CADA HORA ----
     const hora = ahora.getHours();
@@ -136,6 +159,18 @@ useEffect(() => {
               </Typography>
             </Box>
             <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>PARA VOLVERTE A VER</Typography>
+          </CardContent>
+        </Card>
+        {/* Contador de horas para jueves 3 PM */}
+        <Card sx={{ mb: 4, boxShadow: 3, borderRadius: 4 }}>
+          <CardContent>
+            <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>HORAS PARA VERNOS</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
+              <Typography variant="h2" sx={{ color: '#d15b7f', fontWeight: 800 }}>
+                {hoursToThursday}
+              </Typography>
+            </Box>
+            <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>SOLO LAS HORAS</Typography>
           </CardContent>
         </Card>
 
