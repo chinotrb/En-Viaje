@@ -148,9 +148,25 @@ useEffect(() => {
       <div className="overlay"></div>
 
       {/* Encabezado fijo */}
-      <header style={{ position: 'fixed', top: 0, left: 0, width: '100%', background: 'rgba(255,255,255,0.7)', boxShadow: '0 2px 10px rgba(230,169,181,0.08)', padding: '12px 0' }}>
+      <header style={{ position: 'fixed', top: 0, left: 0, width: '100%', background: 'rgba(255,255,255,0.7)', boxShadow: '0 2px 10px rgba(230,169,181,0.08)', padding: '12px 0', zIndex: 101 }}>
         <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: '#E6A9B5', letterSpacing: 2 }}>A.L.L <span role="img" aria-label="corazon"></span></Typography>
       </header>
+
+      {/* Luces navideñas animadas */}
+      <div className="christmas-lights">
+        <div className="christmas-light red"></div>
+        <div className="christmas-light green"></div>
+        <div className="christmas-light yellow"></div>
+        <div className="christmas-light blue"></div>
+        <div className="christmas-light pink"></div>
+        <div className="christmas-light purple"></div>
+        <div className="christmas-light red"></div>
+        <div className="christmas-light green"></div>
+        <div className="christmas-light yellow"></div>
+        <div className="christmas-light blue"></div>
+        <div className="christmas-light pink"></div>
+        <div className="christmas-light purple"></div>
+      </div>
 
       <Box sx={{ zIndex: 2, width: '100%', maxWidth: 480, textAlign: 'center', mt: 10 }}>
         {/* Mensaje motivacional y contador de días en la misma fila */}
@@ -187,7 +203,11 @@ useEffect(() => {
                 {hoursToThursday}
               </Typography>
             </Box>
-            <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>ALMOST THERE</Typography>
+            <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>
+              {hoursToThursday === 0
+                ? 'Estoy seguro que los ojos más hermosos que he visto, son los tuyos.'
+                : 'YA FALTA MENOS'}
+            </Typography>
           </CardContent>
         </Card>
 
