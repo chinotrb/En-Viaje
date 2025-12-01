@@ -170,21 +170,31 @@ export const weeklyLetters = [
   {
     week: 2,
     title: "Mi despedida… pero no mi adiós",
-    text: `Hoy empieza tu viaje, y aunque me alegra todo lo que viene para ti, no te niego que también me tiembla un poquito el corazón.
+    text: `Pronto nos vemos, ya falta un dia menos 
+
+Mañana empieza tu viaje, y aunque me llena de alegría todo lo que viene , no puedo evitar sentir cómo el corazón me tiembla un poco. Es una mezcla extraña entre felicidad, nostalgia y ese a... tan grande que te tengo
 
 Te vas… pero no te pierdo.
+ Te vas… pero no dejo de sentirte cerca.
+ Te vas… pero seguiras siendo esa persona que mueve mi mundo, sin importar la distancia, el horario o el lugar . Eres mi todo, la calma en mis días, mi felicidad en mis momentos difíciles y la razón por la que mi vida tiene un color unico y bonito.
 
-Te vas… pero no te dejo de sentir.
+Quiero que vivás esta nueva etapa este viaje con la ilusión que te hace unica, con esa fuerza tuya que admiro. Quiero que cada día allá sea una experiencia nueva una oportunidad para aprender, un logro para celebrar y una historia que después, cuando estemos juntos, me vas a contar con esa sonrisa que tanto me gusta.
 
-Te vas… pero seguís siendo esa persona que mueve mi mundo, incluso desde lejos.
+Y sí, voy a extrañarte demaciado ,mucho más de lo que puedo escribir en esta carta. Extrañaré tus olor, tu voz, tus ocurrencias, tus ojos, tu forma de verme y hasta esos pequeños detalles que tal vez ni te das cuenta que haces. Pero incluso en la ausencia, sé que voy a sentirte. Porque las personas que se quieren de verdad no se alejan nunca… simplemente se acompañan desde otros lugares.
 
-Quiero que vivás esta etapa con ilusión, con fuerza y con todas esas ganas que tenés de crecer. Quiero que cada día allá sea una oportunidad, un logro, una historia nueva que me vas a contar cuando volvas.
+También voy a estar orgulloso ORGULLOSO de ti, de tus pasos valientes, de la persona increíble en la que te estás convirtiendo y del camino que estás construyendo . No hay nada más admirable que ver cómo buscás tu futuro, cómo enfrentás tus miedos y cómo seguís avanzando aun con dudas o nervios y yo voy a estar aquí, siempre, apoyándote en cada meta, cada sueño y cada salto al vacío que decidas dar.
 
-Yo voy a extrañarte, claro. Mucho. Más de lo que te puedo poner acá.  
-Pero también voy a estar orgulloso. Orgulloso de ti, de todo lo que estás construyendo, y de lo valiente que sos.
+No quiero que te preocupés por mi
+yo estare bien, enforzandome para mejorar tambien 
+para que cuando vuelvas podamos seguir mejorando los y estar juntos en busca de lo que queremos haciendolo de la mejor manera posible , la distacia .no es un obstáculo… es solo una etapa. Una etapa que vamos a atravesar juntos, hablándonos, escuchándonos, extrañándonos, apoyándonos y queriéndonos como lo hemos hecho, eso me lo enseñaste tu...
+Nunca fue un “adiós”.
+ Nunca lo será.
 
-No somos un “adiós”.  
-Somos un “nos vemos pronto”.`
+Lo nuestro siempre ha sido un “nos vemos pronto”. Un pronto que, cuando llegue, va a sentirse tan lindo, tan fuerte y tan especial que cada día de distancia habrá valido la pena.
+Mientras tanto… vivé, disfrutá, aprendé, crecé.
+ Yo voy a estar acá, esperándote, extrañándote y mejorando para ti ,queriéndote incluso más que antes.
+
+llorando un poco pero eso es lo de menos jejej`
   },
   // Semana 3
   {
@@ -246,6 +256,12 @@ Me hace ilusión imaginar cómo vas a volver, cómo será ese abrazo, cómo va a
 Falta, sí…  
 pero cada semana es una menos.  
 Y eso me da fuerza.`
+  },
+  // Semana 7
+  {
+    week: 7,
+    title: "Semana 7: Todavía sos mi pensamiento favorito",
+    text: `Hay días en los que te extraño más.  `
   }
 
 ]

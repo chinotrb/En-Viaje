@@ -22,30 +22,28 @@ export default function Home({ onLock }) {
   const audioRef = useRef(null);
 
   // Lista de canciones (ejemplo, reemplaza con tus URLs)
-    // Lista de canciones (agregada navideña)
-    const songs = [
+  // Lista de canciones (agregada navideña)
+  const songs = [
     '/En-Viaje/music/TheRed-Nosed.mp3', // archivo navideño
     '/En-Viaje/music/ChristmasTree.mp3', // archivo navideño
     //'/En-Viaje/music/Kevin-Kaarl-Colapso.mp3',
-    ];
+  ];
 
   // ---- CONTADOR SOLO DE DÍAS ----
-const fechaObjetivo = new Date("2026-03-30T00:00:00");
+  const fechaObjetivo = new Date("2026-03-30T00:00:00");
 
 useEffect(() => {
   function getNextThursday3PM(now) {
-    // Día de la semana: 0=Domingo, 1=Lunes, ..., 4=Jueves
     const dayOfWeek = now.getDay();
-    // Calcular días hasta el próximo jueves
     let daysUntilThursday = (4 - dayOfWeek + 7) % 7;
-    // Si hoy es jueves y ya pasaron las 3 PM, ir al siguiente jueves
+
     if (daysUntilThursday === 0 && now.getHours() >= 15) {
       daysUntilThursday = 7;
     }
-    // Crear la fecha objetivo
+
     const nextThursday = new Date(now);
     nextThursday.setDate(now.getDate() + daysUntilThursday);
-    nextThursday.setHours(15, 0, 0, 0); // 3 PM
+    nextThursday.setHours(15, 0, 0, 0);
     return nextThursday;
   }
 
@@ -55,31 +53,42 @@ useEffect(() => {
     // ---- 1. DIAS RESTANTES ----
     const diferencia = fechaObjetivo - ahora;
     const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
-    setDaysLeft(dias > 0 ? dias : 0);
+    const diasRestantes = dias > 0 ? dias : 0;
+    setDaysLeft(diasRestantes);
 
-    // ---- CONTADOR DE HORAS HASTA JUEVES 3 PM ----
+    // ---- 2. HORAS HASTA JUEVES 3PM ----
     const nextThursday = getNextThursday3PM(ahora);
     const diffMs = nextThursday - ahora;
-    const hours = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60)));
-    setHoursToThursday(hours);
+    const horas = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60)));
+    setHoursToThursday(horas);
 
-    // ---- 2. MENSAJE CADA HORA ----
+    // ---- 3. FRASE CADA HORA ----
     const hora = ahora.getHours();
     const indexFrase = hora % dailyPhrases.length;
     setCurrentPhrase(dailyPhrases[indexFrase]);
 
-    // ---- MENSAJE MOTIVACIONAL CADA HORA ----
+    // ---- 4. MENSAJE MOTIVACIONAL POR HORA ----
     const indexMotivacional = hora % motivationalMessages.length;
     setCurrentMotivational(motivationalMessages[indexMotivacional]);
 
-    // ---- 3. CARTA CADA SEMANA ----
-    // semana actual según los días restantes
-    const semana = Math.floor((dias / 7));
+    // ---- 5. CARTA SEGÚN FECHA REAL DEL VIAJE ----
 
-    // límite para no pasarse del array
+    // Fecha en que ella se fue
+    const fechaInicioViaje = new Date("2025-11-23T15:00:00");
+
+    // Tiempo transcurrido desde que se fue
+    let diffMsWeeks = ahora - fechaInicioViaje;
+
+    // Si aún no es el 1 de dic 3 PM, mostrar la semana 1 siempre
+    if (diffMsWeeks < 0) diffMsWeeks = 0;
+
+    // Semanas reales completas transcurridas
+    const semanasPasadas = Math.floor(diffMsWeeks / (1000 * 60 * 60 * 24 * 7));
+
+    // Determinar índice válido dentro del array de cartas
     const indexCarta = Math.min(
-      weeklyLetters.length - 1,
-      Math.max(0, weeklyLetters.length - 1 - semana)
+      semanasPasadas,              // semana actual real
+      weeklyLetters.length - 1     // límite máximo
     );
 
     setCurrentLetter(weeklyLetters[indexCarta]);
@@ -87,11 +96,13 @@ useEffect(() => {
 
   updateData();
 
-  // Actualizar cada minuto (suficiente y no consume batería)
+  // Actualizar cada minuto
   const interval = setInterval(updateData, 60 * 1000);
 
   return () => clearInterval(interval);
 }, []);
+
+
 
   return (
     <div className="fade-in" style={{ minHeight: '100vh', background: 'linear-gradient(120deg, #d4a9e6 0%, #f7dde2 60%, #e6a9b5 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
@@ -106,8 +117,8 @@ useEffect(() => {
         <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '22%', left: '45%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%)', animation: 'planeMoveRight 40s linear infinite' }} />
         <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '54%', left: '60%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%) scaleX(-1)', animation: 'planeMoveLeft 55s linear infinite' }} />
         <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '68%', left: '30%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%)', animation: 'planeMoveRight 65s linear infinite' }} />
-          {/* Santa volando */}
-          <img src={santaImg} alt="santa volando" style={{ position: 'absolute', top: '10%', left: '10%', width: 120, height: 80, zIndex: 2, transform: 'translateX(-50%)', animation: 'santaFly 60s linear infinite' }} />
+        {/* Santa volando */}
+        <img src={santaImg} alt="santa volando" style={{ position: 'absolute', top: '10%', left: '10%', width: 120, height: 80, zIndex: 2, transform: 'translateX(-50%)', animation: 'santaFly 60s linear infinite' }} />
         <style>{`
           @keyframes cloudMoveRight {
             0% { left: 40%; opacity: 0.8; }
@@ -130,7 +141,7 @@ useEffect(() => {
             100% { left: -20%; opacity: 0.5; }
           }
             @keyframes santaFly {
-              0%   { left: 10%; opacity: 0.95; transform: translateX(-50%) translateY(0); }
+               0%   { left: -20%; opacity: 0; transform: translateY(0); }
               10%  { opacity: 1; }
               20%  { transform: translateX(-50%) translateY(-20px); }
               30%  { transform: translateX(-50%) translateY(-40px); }
