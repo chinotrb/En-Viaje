@@ -194,22 +194,7 @@ useEffect(() => {
             </CardContent>
           </Card>
         </Box>
-        {/* Contador de horas para jueves 3 PM */}
-        <Card sx={{ mb: 4, boxShadow: 3, borderRadius: 4 }}>
-          <CardContent>
-            <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>HOURS TO THURSDAY 3PM</Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
-              <Typography variant="h2" sx={{ color: '#d15b7f', fontWeight: 800 }}>
-                {hoursToThursday}
-              </Typography>
-            </Box>
-            <Typography sx={{ color: '#b56d87', fontWeight: 500, fontSize: '1.1rem', letterSpacing: 1 }}>
-              {hoursToThursday === 0
-                ? 'Estoy seguro que los ojos más hermosos que he visto, son los tuyos.'
-                : 'YA FALTA MENOS'}
-            </Typography>
-          </CardContent>
-        </Card>
+        {/* Contador de horas para jueves 3 PM oculto */}
 
         {/* Frase diaria */}
         <Card sx={{ mb: 4, boxShadow: 3, borderRadius: 4 }}>
