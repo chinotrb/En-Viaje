@@ -44,10 +44,10 @@ export default function LettersModal({ onClose }) {
           </div>
         ) : (
           <div className="letter-content">
-            <button className="back-btn" onClick={() => setCartaSeleccionada(null)}>&larr; Volver</button>
             <h3>{cartaSeleccionada.title}</h3>
             <span className="letter-date">Semana {cartaSeleccionada.week}</span>
             <pre style={{whiteSpace:'pre-wrap',textAlign:'left',marginTop:12}}>{cartaSeleccionada.text}</pre>
+            <button className="back-btn unique-btn" onClick={() => setCartaSeleccionada(null)}>&larr; Volver</button>
           </div>
         )}
       </div>

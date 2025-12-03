@@ -1,0 +1,332 @@
+:root {
+    --bg-gradient: linear-gradient(120deg, #d4a9e6 0%, #f7dde2 60%, #e6a9b5 100%);
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-gradient);
+}
+
+.fade-in {
+    animation: fadeIn .6s ease both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.background-animated {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.background-animated .cloud {
+    position: absolute;
+    /* softer, slightly translucent cloud to reveal background */
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.8));
+    filter: blur(2px);
+    transform: translateX(-50%);
+    will-change: transform, opacity;
+    transform-origin: center;
+    backface-visibility: hidden;
+}
+
+.background-animated .cloud1 {
+    top: 12%;
+    left: 40%;
+    width: 220px;
+    height: 70px;
+    border-radius: 50px;
+    opacity: 0.75;
+    animation: mainCloudMoveRight 60s linear infinite;
+    animation-delay: 0s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.background-animated .cloud2 {
+    top: 32%;
+    left: 60%;
+    width: 320px;
+    height: 90px;
+    border-radius: 60px;
+    opacity: 0.7;
+    animation: mainCloudMoveLeft 80s linear infinite;
+    animation-delay: 6s;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+}
+
+.background-animated .cloud3 {
+    top: 58%;
+    left: 35%;
+    width: 180px;
+    height: 60px;
+    border-radius: 40px;
+    opacity: 0.65;
+    animation: mainCloudMoveRight 70s linear infinite;
+    animation-delay: 12s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.background-animated .cloud4 {
+    top: 70%;
+    left: 70%;
+    width: 200px;
+    height: 60px;
+    border-radius: 40px;
+    opacity: 0.6;
+    animation: mainCloudMoveLeft 90s linear infinite;
+    animation-delay: 3s;
+    box-shadow: 0 9px 26px rgba(0,0,0,0.05);
+}
+@keyframes mainCloudMoveRight {
+    0% {
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 0.85;
+    }
+    25% {
+        transform: translateX(calc(30vw - 50%)) translateY(-6px) scale(1.02);
+        opacity: 0.95;
+    }
+    50% {
+        transform: translateX(calc(60vw - 50%)) translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translateX(calc(90vw - 50%)) translateY(6px) scale(0.98);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(calc(140vw - 50%)) translateY(0) scale(1);
+        opacity: 0.5;
+    }
+}
+
+@keyframes mainCloudMoveLeft {
+    0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.85; }
+    25% { transform: translateX(calc(-30vw - 50%)) translateY(6px) scale(1.02); opacity: 0.95; }
+    50% { transform: translateX(calc(-60vw - 50%)) translateY(0) scale(1); opacity: 0.9; }
+    75% { transform: translateX(calc(-90vw - 50%)) translateY(-6px) scale(0.98); opacity: 0.8; }
+    100% { transform: translateX(calc(-140vw - 50%)) translateY(0) scale(1); opacity: 0.5; }
+}
+
+.background-animated .plane {
+    position: absolute;
+    width: 90px;
+    height: 60px;
+    z-index: 2;
+    transform: translateX(-50%);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.background-animated .plane0 {
+    top: 14%;
+    right: 0%;
+    /* Ensure the plane image faces left while flying left */
+    animation: mainPlaneMoveLeft 55s linear infinite;
+}
+
+.background-animated .plane1 {
+    top: 22%;
+    left: 45%;
+    animation: mainPlaneMoveRight 40s linear infinite;
+}
+
+.background-animated .plane2 {
+    top: 54%;
+    left: 60%;
+    /* Ensure the plane image faces left while flying left */
+    transform: translateX(-50%) scaleX(1);
+    animation: mainPlaneMoveLeft 55s linear infinite;
+}
+
+.background-animated .plane3 {
+    top: 68%;
+    left: 30%;
+    animation: mainPlaneMoveRight 65s linear infinite;
+}
+@keyframes mainPlaneMoveRight {
+    0% { transform: translateX(-50%); opacity: 0.9; }
+    10% { opacity: 1; }
+    100% { transform: translateX(calc(140vw - 50%)); opacity: 0.5; }
+}
+
+@keyframes mainPlaneMoveLeft {
+    0% { transform: translateX(-50%); opacity: 0.9; }
+    10% { opacity: 1; }
+    100% { transform: translateX(calc(-140vw - 50%)); opacity: 0.5; }
+}
+
+.background-animated .santa {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 120px;
+    height: 80px;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: mainSantaFly 60s linear infinite;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+@keyframes mainSantaFly {
+    0% { transform: translateX(-50%) translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    20% { transform: translateX(calc(10vw - 50%)) translateY(-20px); }
+    30% { transform: translateX(calc(30vw - 50%)) translateY(-40px); }
+    40% { transform: translateX(calc(50vw - 50%)) translateY(-20px); }
+    50% { transform: translateX(calc(70vw - 50%)) translateY(0); }
+    60% { transform: translateX(calc(90vw - 50%)) translateY(20px); }
+    70% { transform: translateX(calc(110vw - 50%)) translateY(40px); }
+    80% { transform: translateX(calc(130vw - 50%)) translateY(20px); }
+    90% { transform: translateX(calc(150vw - 50%)) translateY(0); }
+    100% { transform: translateX(calc(170vw - 50%)) translateY(0); opacity: 0.7; }
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.06), transparent 20%), linear-gradient(180deg, rgba(230, 169, 181, 0.03), transparent 50%);
+}
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 10px rgba(230, 169, 181, 0.08);
+    padding: 12px 0;
+}
+
+.christmas-lights {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.christmas-light {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+    animation: blink 1.6s infinite;
+}
+
+.christmas-light.red {
+    background: #ff4d6d;
+    animation-delay: 0s
+}
+
+.christmas-light.green {
+    background: #46d39a;
+    animation-delay: 0.1s
+}
+
+.christmas-light.yellow {
+    background: #ffd166;
+    animation-delay: 0.2s
+}
+
+.christmas-light.blue {
+    background: #75b9ff;
+    animation-delay: 0.3s
+}
+
+.christmas-light.pink {
+    background: #ffb3d2;
+    animation-delay: 0.4s
+}
+
+.christmas-light.purple {
+    background: #c29bff;
+    animation-delay: 0.5s
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.25;
+        transform: scale(.9)
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05)
+    }
+
+    100% {
+        opacity: 0.25;
+        transform: scale(.9)
+    }
+}
+
+.unique-btn {
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+}
+
+.btn-album {
+    background: linear-gradient(90deg, #E6A9B5 0%, #A9CFE6 100%) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+
+.btn-letters {
+    background: linear-gradient(90deg, #A9CFE6 0%, #E6A9B5 100%) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+
+.logout-btn {
+    margin-top: 8px !important;
+}
+
+.unique-btn-text {
+    /* small adjustments for floating music button */
+}
+
+.audio-hidden {
+    display: none !important;
+}
+
+.popup-icon {
+    font-size: 32px;
+    color: #ff6b9d;
+    display: inline-block;
+}
+
+/* small responsive tweaks */
+@media (max-width:480px) {
+    .page-container {
+        padding-bottom: 64px
+    }
+
+    .christmas-lights {
+        top: 72px
+    }
+}

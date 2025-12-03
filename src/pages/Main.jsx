@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useRef } from 'react';
-import { dailyPhrases, weeklyLetters, motivationalMessages } from '../data';
-import avionImg from '../assets/avion.png';
-import santaImg from '../assets/santa_volando.png';
+import { useState, useRef } from 'react';
+import AnimatedBackground from '../components/AnimatedBackground';
 import Popup from '../components/popup';
 import { Button, Box, Typography, Card, CardContent } from '@mui/material';
+
+import './Main.css';
+import useMainData from '../hooks/useMainData';
 
 // Recibe funciones para mostrar los modales desde App.jsx
 // Agrega las props onShowAlbum y onShowLetters
@@ -14,155 +14,24 @@ import FlightIcon from '@mui/icons-material/Flight';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export default function Home({ onLock, onShowAlbum, onShowLetters }) {
-  const [daysLeft, setDaysLeft] = useState(0);
-  const [hoursToThursday, setHoursToThursday] = useState(0);
-  const [currentPhrase, setCurrentPhrase] = useState(dailyPhrases[0]);
-  const [currentMotivational, setCurrentMotivational] = useState(motivationalMessages[0]);
-  const [currentLetter, setCurrentLetter] = useState(weeklyLetters[0]);
+  const { daysLeft, hoursToThursday, currentPhrase, currentMotivational, currentLetter } = useMainData();
   const [showLetter, setShowLetter] = useState(false);
   const [playMusic, setPlayMusic] = useState(false);
   const [currentSong, setCurrentSong] = useState(0);
   const audioRef = useRef(null);
 
   // Lista de canciones (ejemplo, reemplaza con tus URLs)
-  // Lista de canciones (agregada navideña)
-  const songs = [
-    '/En-Viaje/music/TheRed-Nosed.mp3', // archivo navideño
-    '/En-Viaje/music/ChristmasTree.mp3', // archivo navideño
-    //'/En-Viaje/music/Kevin-Kaarl-Colapso.mp3',
-  ];
-
-  // ---- CONTADOR SOLO DE DÍAS ----
-  const fechaObjetivo = new Date("2026-03-30T00:00:00");
-
-useEffect(() => {
-  function getNextThursday3PM(now) {
-    const dayOfWeek = now.getDay();
-    let daysUntilThursday = (4 - dayOfWeek + 7) % 7;
-
-    if (daysUntilThursday === 0 && now.getHours() >= 15) {
-      daysUntilThursday = 7;
-    }
-
-    const nextThursday = new Date(now);
-    nextThursday.setDate(now.getDate() + daysUntilThursday);
-    nextThursday.setHours(15, 0, 0, 0);
-    return nextThursday;
-  }
-
-  function updateData() {
-    const ahora = new Date();
-
-    // ---- 1. DIAS RESTANTES ----
-    const diferencia = fechaObjetivo - ahora;
-    const dias = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
-    const diasRestantes = dias > 0 ? dias : 0;
-    setDaysLeft(diasRestantes);
-
-    // ---- 2. HORAS HASTA JUEVES 3PM ----
-    const nextThursday = getNextThursday3PM(ahora);
-    const diffMs = nextThursday - ahora;
-    const horas = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60)));
-    setHoursToThursday(horas);
-
-    // ---- 3. FRASE CADA HORA ----
-    const hora = ahora.getHours();
-    const indexFrase = hora % dailyPhrases.length;
-    setCurrentPhrase(dailyPhrases[indexFrase]);
-
-    // ---- 4. MENSAJE MOTIVACIONAL POR HORA ----
-    const indexMotivacional = hora % motivationalMessages.length;
-    setCurrentMotivational(motivationalMessages[indexMotivacional]);
-
-    // ---- 5. CARTA SEGÚN FECHA REAL DEL VIAJE ----
-
-    // Fecha en que ella se fue
-    const fechaInicioViaje = new Date("2025-11-23T15:00:00");
-
-    // Tiempo transcurrido desde que se fue
-    let diffMsWeeks = ahora - fechaInicioViaje;
-
-    // Si aún no es el 1 de dic 3 PM, mostrar la semana 1 siempre
-    if (diffMsWeeks < 0) diffMsWeeks = 0;
-
-    // Semanas reales completas transcurridas
-    const semanasPasadas = Math.floor(diffMsWeeks / (1000 * 60 * 60 * 24 * 7));
-
-    // Determinar índice válido dentro del array de cartas
-    const indexCarta = Math.min(
-      semanasPasadas,              // semana actual real
-      weeklyLetters.length - 1     // límite máximo
-    );
-
-    setCurrentLetter(weeklyLetters[indexCarta]);
-  }
-
-  updateData();
-
-  // Actualizar cada minuto
-  const interval = setInterval(updateData, 60 * 1000);
-
-  return () => clearInterval(interval);
-}, []);
-
-
+  const songs = ['/En-Viaje/music/TheRed-Nosed.mp3', '/En-Viaje/music/ChristmasTree.mp3'];
 
   return (
-    <div className="fade-in" style={{ minHeight: '100vh', background: 'linear-gradient(120deg, #d4a9e6 0%, #f7dde2 60%, #e6a9b5 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+    <div className="page-container fade-in">
       {/* Fondo animado de nubes y aviones */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
-        {/* Nubes animadas */}
-        <div className="cloud cloud1" style={{ position: 'absolute', top: '12%', left: '40%', width: 220, height: 70, background: '#fff', borderRadius: 50, opacity: 0.7, filter: 'blur(2px)', transform: 'translateX(-50%)', animation: 'cloudMoveRight 60s linear infinite' }} />
-        <div className="cloud cloud2" style={{ position: 'absolute', top: '32%', left: '60%', width: 320, height: 90, background: '#fff', borderRadius: 60, opacity: 0.8, filter: 'blur(2px)', transform: 'translateX(-50%)', animation: 'cloudMoveLeft 80s linear infinite' }} />
-        <div className="cloud cloud3" style={{ position: 'absolute', top: '58%', left: '35%', width: 180, height: 60, background: '#fff', borderRadius: 40, opacity: 0.6, filter: 'blur(2px)', transform: 'translateX(-50%)', animation: 'cloudMoveRight 70s linear infinite' }} />
-        <div className="cloud cloud4" style={{ position: 'absolute', top: '70%', left: '70%', width: 200, height: 60, background: '#fff', borderRadius: 40, opacity: 0.5, filter: 'blur(2px)', transform: 'translateX(-50%)', animation: 'cloudMoveLeft 90s linear infinite' }} />
-        {/* Aviones con imagen y efecto espejo */}
-        <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '22%', left: '45%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%)', animation: 'planeMoveRight 40s linear infinite' }} />
-        <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '54%', left: '60%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%) scaleX(-1)', animation: 'planeMoveLeft 55s linear infinite' }} />
-        <img src={avionImg} alt="avion" style={{ position: 'absolute', top: '68%', left: '30%', width: 90, height: 60, zIndex: 2, transform: 'translateX(-50%)', animation: 'planeMoveRight 65s linear infinite' }} />
-        {/* Santa volando */}
-        <img src={santaImg} alt="santa volando" style={{ position: 'absolute', top: '10%', left: '10%', width: 120, height: 80, zIndex: 2, transform: 'translateX(-50%)', animation: 'santaFly 60s linear infinite' }} />
-        <style>{`
-          @keyframes cloudMoveRight {
-            0% { left: 40%; opacity: 0.8; }
-            10% { opacity: 1; }
-            100% { left: 110%; opacity: 0.5; }
-          }
-          @keyframes cloudMoveLeft {
-            0% { left: 60%; opacity: 0.8; }
-            10% { opacity: 1; }
-            100% { left: -30%; opacity: 0.5; }
-          }
-          @keyframes planeMoveRight {
-            0% { left: 45%; opacity: 0.9; }
-            10% { opacity: 1; }
-            100% { left: 120%; opacity: 0.5; }
-          }
-          @keyframes planeMoveLeft {
-            0% { left: 60%; opacity: 0.9; }
-            10% { opacity: 1; }
-            100% { left: -20%; opacity: 0.5; }
-          }
-            @keyframes santaFly {
-               0%   { left: -20%; opacity: 0; transform: translateY(0); }
-              10%  { opacity: 1; }
-              20%  { transform: translateX(-50%) translateY(-20px); }
-              30%  { transform: translateX(-50%) translateY(-40px); }
-              40%  { transform: translateX(-50%) translateY(-20px); }
-              50%  { transform: translateX(-50%) translateY(0); }
-              60%  { transform: translateX(-50%) translateY(20px); }
-              70%  { transform: translateX(-50%) translateY(40px); }
-              80%  { transform: translateX(-50%) translateY(20px); }
-              90%  { transform: translateX(-50%) translateY(0); }
-              100% { left: 120%; opacity: 0.7; transform: translateX(-50%) translateY(0); }
-            }
-        `}</style>
-      </div>
+      <AnimatedBackground />
 
       <div className="overlay"></div>
 
       {/* Encabezado fijo */}
-      <header style={{ position: 'fixed', top: 0, left: 0, width: '100%', background: 'rgba(255,255,255,0.7)', boxShadow: '0 2px 10px rgba(230,169,181,0.08)', padding: '12px 0'}}>
+      <header className="header-fixed">
         <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: '#E6A9B5', letterSpacing: 2 }}>A.L.L <span role="img" aria-label="corazon"></span></Typography>
       </header>
 
@@ -233,8 +102,7 @@ useEffect(() => {
             <Button
               variant="contained"
               color="primary"
-              className="unique-btn"
-              style={{ background: 'linear-gradient(90deg, #E6A9B5 0%, #A9CFE6 100%)', color: '#fff', fontWeight: 'bold' }}
+              className="unique-btn btn-album"
               onClick={onShowAlbum}
             >
               📸 Album
@@ -242,15 +110,14 @@ useEffect(() => {
             <Button
               variant="contained"
               color="secondary"
-              className="unique-btn"
-              style={{ background: 'linear-gradient(90deg, #A9CFE6 0%, #E6A9B5 100%)', color: '#fff', fontWeight: 'bold' }}
+              className="unique-btn btn-letters"
               onClick={onShowLetters}
             >
               💌 cartas
             </Button>
           </Box>
           {/* Cerrar sesión */}
-          <Button variant="contained" color="secondary" onClick={onLock} className="unique-btn" style={{ marginTop: 8 }}>Cerrar sesión</Button>
+          <Button variant="contained" color="secondary" onClick={onLock} className="unique-btn logout-btn">Cerrar sesión</Button>
         </Box>
 
         {/* Botón música en esquina inferior derecha */}
@@ -281,7 +148,7 @@ useEffect(() => {
             ref={audioRef}
             src={songs[currentSong]}
             loop
-            style={{ display: 'none' }}
+            className="audio-hidden"
           />
         </Box>
 
@@ -289,7 +156,7 @@ useEffect(() => {
           <Popup
             open={showLetter}
             onClose={() => setShowLetter(false)}
-            icon={<span style={{ fontSize: 32, color: '#ff6b9d' }}>💗</span>}
+            icon={<span className="popup-icon">💗</span>}
             subtitle={`WEEK ${currentLetter.week}`}
             title={currentLetter.title}
             signature={"Tu chino ♡"}
