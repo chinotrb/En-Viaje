@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import LockScreen from './pages/LockScreen'
 import Main from './pages/Main'
+import PhotoAlbum from './components/PhotoAlbum'
 import './main.css'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
   const [deferredPrompt, setDeferredPrompt] = useState(null)
   const [showInstall, setShowInstall] = useState(false)
   const [snowflakes, setSnowflakes] = useState([])
+  const [showAlbum, setShowAlbum] = useState(false)
 
   // Generar copos de nieve al cargar
   useEffect(() => {
@@ -56,47 +58,79 @@ function App() {
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 600px)').matches
 
   return (
-      <>
-        {/* Animación de nieve */}
-        <div className="snow">
-          {snowflakes.map(flake => (
-            <span
-              key={flake.id}
-              className="snowflake"
-              style={{
-                left: `${flake.left}%`,
-                fontSize: `${flake.size}px`,
-                animationDelay: `${flake.delay}s`,
-                animationDuration: `${flake.duration}s`,
-              }}
-            >{flake.char}</span>
-          ))}
-        </div>
-        {isUnlocked ? <Main onLock={lock} /> : <LockScreen onUnlock={unlock} />}
-        {showInstall && isMobile && (
-          <button
+    <>
+      {/* Animación de nieve */}
+      <div className="snow">
+        {snowflakes.map(flake => (
+          <span
+            key={flake.id}
+            className="snowflake"
             style={{
-              position: 'fixed',
-              bottom: '24px',
-              right: '24px',
-              zIndex: 9999,
-              padding: '16px 24px',
-              background: '#E6A9B5',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '32px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              display: 'block',
+              left: `${flake.left}%`,
+              fontSize: `${flake.size}px`,
+              animationDelay: `${flake.delay}s`,
+              animationDuration: `${flake.duration}s`,
             }}
-            onClick={handleInstallClick}
-          >
-            Descargar app
-          </button>
-        )}
-      </>
+          >{flake.char}</span>
+        ))}
+      </div>
+      {isUnlocked ? <Main onLock={lock} /> : <LockScreen onUnlock={unlock} />}
+      {/* Botón bonito para abrir el álbum de fotos */}
+      {isUnlocked && (
+        <button
+          style={{
+            position: 'fixed',
+            bottom: '24px',
+            left: '24px',
+            zIndex: 9999,
+            padding: '16px 28px',
+            background: 'linear-gradient(90deg, #E6A9B5 0%, #A9CFE6 100%)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '32px',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            display: 'block',
+            letterSpacing: '1px',
+            transition: 'transform 0.2s',
+          }}
+          onClick={() => setShowAlbum(true)}
+          onMouseDown={e => e.currentTarget.style.transform = 'scale(0.97)'}
+          onMouseUp={e => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          📸 Album
+        </button>
+      )}
+      {/* Modal del álbum de fotos */}
+      {showAlbum && (
+        <PhotoAlbum onClose={() => setShowAlbum(false)} />
+      )}
+      {showInstall && isMobile && (
+        <button
+          style={{
+            position: 'fixed',
+            bottom: '24px',
+            right: '24px',
+            zIndex: 9999,
+            padding: '16px 24px',
+            background: '#E6A9B5',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '32px',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            display: 'block',
+          }}
+          onClick={handleInstallClick}
+        >
+          Descargar app
+        </button>
+      )}
+    </>
   )
 }
 
