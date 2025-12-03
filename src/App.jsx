@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import LockScreen from './pages/LockScreen'
 import Main from './pages/Main'
 import PhotoAlbum from './components/PhotoAlbum'
+import LettersModal from './components/LettersModal'
 import './main.css'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const [showInstall, setShowInstall] = useState(false)
   const [snowflakes, setSnowflakes] = useState([])
   const [showAlbum, setShowAlbum] = useState(false)
+  const [showLetters, setShowLetters] = useState(false)
 
   // Generar copos de nieve al cargar
   useEffect(() => {
@@ -74,38 +76,22 @@ function App() {
           >{flake.char}</span>
         ))}
       </div>
-      {isUnlocked ? <Main onLock={lock} /> : <LockScreen onUnlock={unlock} />}
+      {isUnlocked ? (
+        <Main
+          onLock={lock}
+          onShowAlbum={() => setShowAlbum(true)}
+          onShowLetters={() => setShowLetters(true)}
+        />
+      ) : <LockScreen onUnlock={unlock} />}
       {/* Botón bonito para abrir el álbum de fotos */}
-      {isUnlocked && (
-        <button
-          style={{
-            position: 'fixed',
-            bottom: '24px',
-            left: '24px',
-            zIndex: 9999,
-            padding: '16px 28px',
-            background: 'linear-gradient(90deg, #E6A9B5 0%, #A9CFE6 100%)',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '32px',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
-            fontSize: '20px',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            display: 'block',
-            letterSpacing: '1px',
-            transition: 'transform 0.2s',
-          }}
-          onClick={() => setShowAlbum(true)}
-          onMouseDown={e => e.currentTarget.style.transform = 'scale(0.97)'}
-          onMouseUp={e => e.currentTarget.style.transform = 'scale(1)'}
-        >
-          📸 Album
-        </button>
-      )}
+      {/* Los botones de álbum y leer cartas ahora se mostrarán en Main.jsx debajo del botón de carta semanal */}
       {/* Modal del álbum de fotos */}
       {showAlbum && (
         <PhotoAlbum onClose={() => setShowAlbum(false)} />
+      )}
+      {/* Modal de cartas semanales */}
+      {showLetters && (
+        <LettersModal onClose={() => setShowLetters(false)} />
       )}
       {showInstall && isMobile && (
         <button
@@ -113,7 +99,6 @@ function App() {
             position: 'fixed',
             bottom: '24px',
             right: '24px',
-            zIndex: 9999,
             padding: '16px 24px',
             background: '#E6A9B5',
             color: '#fff',

@@ -40,8 +40,40 @@ export default function Popup({ open, onClose, children, title, subtitle, icon, 
         </IconButton>
         {icon && <Box sx={{ mb: 2 }}>{icon}</Box>}
         {subtitle && <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>{subtitle}</Typography>}
-        {title && <Typography variant="h5" sx={{ fontFamily: 'Playfair Display', fontWeight: 700, color: '#c57a8a', mb: 2, mt: 1 }}>{title}</Typography>}
-        <Box sx={{ mb: 2, textAlign: 'left', fontSize: { xs: '1rem', sm: '1.1rem' }, color: '#333', whiteSpace: 'pre-line', wordBreak: 'break-word', px: { xs: 0, sm: 1 } }}>{children}</Box>
+        {title && (
+          <Typography
+            variant="h5"
+            sx={{
+              fontFamily: 'Times, cursive',
+              fontSize: '24px',
+              fontWeight: 'normal',
+              color: '#c57a8a',
+              mb: 2,
+              mt: 1,
+              textAlign: 'center',
+            }}
+          >
+            {title}
+          </Typography>
+        )}
+        <Box
+          sx={{
+            mb: 2,
+            textAlign: 'left',
+            fontSize: '18px',
+            color: '#444',
+            fontFamily: 'Times, cursive',
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            lineHeight: 1.7,
+            whiteSpace: 'pre-line',
+            wordBreak: 'break-word',
+            px: { xs: 0, sm: 1 },
+          }}
+        >
+          {children}
+        </Box>
         {signature && (
           <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid #eee' }}>
             <Typography sx={{ fontStyle: 'italic', color: '#b56d87', mb: 1 }}>Forever yours,</Typography>

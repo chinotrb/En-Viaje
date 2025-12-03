@@ -5,12 +5,15 @@ import avionImg from '../assets/avion.png';
 import santaImg from '../assets/santa_volando.png';
 import Popup from '../components/popup';
 import { Button, Box, Typography, Card, CardContent } from '@mui/material';
+
+// Recibe funciones para mostrar los modales desde App.jsx
+// Agrega las props onShowAlbum y onShowLetters
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import FlightIcon from '@mui/icons-material/Flight';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
-export default function Home({ onLock }) {
+export default function Home({ onLock, onShowAlbum, onShowLetters }) {
   const [daysLeft, setDaysLeft] = useState(0);
   const [hoursToThursday, setHoursToThursday] = useState(0);
   const [currentPhrase, setCurrentPhrase] = useState(dailyPhrases[0]);
@@ -159,7 +162,7 @@ useEffect(() => {
       <div className="overlay"></div>
 
       {/* Encabezado fijo */}
-      <header style={{ position: 'fixed', top: 0, left: 0, width: '100%', background: 'rgba(255,255,255,0.7)', boxShadow: '0 2px 10px rgba(230,169,181,0.08)', padding: '12px 0', zIndex: 101 }}>
+      <header style={{ position: 'fixed', top: 0, left: 0, width: '100%', background: 'rgba(255,255,255,0.7)', boxShadow: '0 2px 10px rgba(230,169,181,0.08)', padding: '12px 0'}}>
         <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: '#E6A9B5', letterSpacing: 2 }}>A.L.L <span role="img" aria-label="corazon"></span></Typography>
       </header>
 
@@ -225,7 +228,27 @@ useEffect(() => {
           <Button variant="outlined" startIcon={<MailOutlineIcon />} className="unique-btn" onClick={() => setShowLetter(true)}>
             Read Weekly Letter
           </Button>
-
+          {/* Botones de álbum y leer cartas en la misma fila */}
+          <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 1, justifyContent: 'center' }}>
+            <Button
+              variant="contained"
+              color="primary"
+              className="unique-btn"
+              style={{ background: 'linear-gradient(90deg, #E6A9B5 0%, #A9CFE6 100%)', color: '#fff', fontWeight: 'bold' }}
+              onClick={onShowAlbum}
+            >
+              📸 Album
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              className="unique-btn"
+              style={{ background: 'linear-gradient(90deg, #A9CFE6 0%, #E6A9B5 100%)', color: '#fff', fontWeight: 'bold' }}
+              onClick={onShowLetters}
+            >
+              💌 cartas
+            </Button>
+          </Box>
           {/* Cerrar sesión */}
           <Button variant="contained" color="secondary" onClick={onLock} className="unique-btn" style={{ marginTop: 8 }}>Cerrar sesión</Button>
         </Box>
