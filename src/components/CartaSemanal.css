@@ -1,13 +1,27 @@
 .popup-card.popup-open {
-  opacity: 1 !important;
-  transform: scale(1) !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
 }
+
 @media (max-width: 600px) {
-  .popup-card {
-    width: 98vw !important;
-    max-width: 98vw !important;
-    max-height: 90vh !important;
-    padding: 10px !important;
-    border-radius: 12px !important;
-  }
+    .popup-card {
+        width: 98vw !important;
+        max-width: 98vw !important;
+        max-height: 90vh !important;
+        padding: 10px !important;
+        border-radius: 12px !important;
+    }
+}
+
+.css-h8vgxo-MuiTypography-root {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem !important;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    color: #333;
+    font-family: Times !important;
+    /* font-size: 1.25rem !important; */
+    white-space: pre-line;
+    margin-bottom: 16px;
 }
