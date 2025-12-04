@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import AnimatedBackground from '../components/AnimatedBackground';
-import Popup from '../components/popup';
+import CartaSemanal from '../components/CartaSemanal';
 import { Button, Box, Typography, Card, CardContent } from '@mui/material';
 
 import './Main.css';
@@ -34,22 +34,6 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
       <header className="header-fixed enter-up">
         <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: '#E6A9B5', letterSpacing: 2 }}>A.L.L <span role="img" aria-label="corazon"></span></Typography>
       </header>
-
-      {/* Luces navideñas animadas */}
-      <div className="christmas-lights enter-fade">
-        <div className="christmas-light red"></div>
-        <div className="christmas-light green"></div>
-        <div className="christmas-light yellow"></div>
-        <div className="christmas-light blue"></div>
-        <div className="christmas-light pink"></div>
-        <div className="christmas-light purple"></div>
-        <div className="christmas-light red"></div>
-        <div className="christmas-light green"></div>
-        <div className="christmas-light yellow"></div>
-        <div className="christmas-light blue"></div>
-        <div className="christmas-light pink"></div>
-        <div className="christmas-light purple"></div>
-      </div>
 
       <Box className="stagger" sx={{ zIndex: 2, width: '100%', maxWidth: 480, textAlign: 'center', mt: 10 }}>
         {/* Mensaje motivacional y contador de días en la misma fila */}
@@ -153,7 +137,7 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
         </Box>
 
         {showLetter && (
-          <Popup
+          <CartaSemanal
             open={showLetter}
             onClose={() => setShowLetter(false)}
             icon={<span className="popup-icon">💗</span>}
@@ -164,7 +148,7 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
             <Typography sx={{ fontFamily: 'Times', fontSize: '1.25rem', color: '#333', whiteSpace: 'pre-line', mb: 2 }}>
               {currentLetter.text}
             </Typography>
-          </Popup>
+          </CartaSemanal>
         )}
       </Box>
     </div>

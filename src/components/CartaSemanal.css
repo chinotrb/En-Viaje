@@ -1,0 +1,13 @@
+.popup-card.popup-open {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+@media (max-width: 600px) {
+  .popup-card {
+    width: 98vw !important;
+    max-width: 98vw !important;
+    max-height: 90vh !important;
+    padding: 10px !important;
+    border-radius: 12px !important;
+  }
+}
