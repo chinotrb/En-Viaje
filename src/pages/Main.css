@@ -54,8 +54,9 @@
     height: 70px;
     border-radius: 50px;
     opacity: 0.75;
-    animation: mainCloudMoveRight 60s linear infinite;
-    animation-delay: 0s;
+    /* short intro then long movement */
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveRight 60s linear infinite;
+    animation-delay: 0.05s, 0s;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
@@ -66,8 +67,8 @@
     height: 90px;
     border-radius: 60px;
     opacity: 0.7;
-    animation: mainCloudMoveLeft 80s linear infinite;
-    animation-delay: 6s;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveLeft 80s linear infinite;
+    animation-delay: 0.20s, 0s;
     box-shadow: 0 12px 36px rgba(0,0,0,0.06);
 }
 
@@ -78,8 +79,8 @@
     height: 60px;
     border-radius: 40px;
     opacity: 0.65;
-    animation: mainCloudMoveRight 70s linear infinite;
-    animation-delay: 12s;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveRight 70s linear infinite;
+    animation-delay: 0.35s, 0s;
     box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 
@@ -90,8 +91,8 @@
     height: 60px;
     border-radius: 40px;
     opacity: 0.6;
-    animation: mainCloudMoveLeft 90s linear infinite;
-    animation-delay: 3s;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveLeft 90s linear infinite;
+    animation-delay: 0.50s, 0s;
     box-shadow: 0 9px 26px rgba(0,0,0,0.05);
 }
 @keyframes mainCloudMoveRight {
@@ -127,7 +128,8 @@
 
 .background-animated .plane {
     position: absolute;
-    width: 90px;
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveRight 65s linear infinite;
+    animation-delay: 0.60s, 0s;
     height: 60px;
     z-index: 2;
     transform: translateX(-50%);
@@ -139,13 +141,15 @@
     top: 14%;
     right: 0%;
     /* Ensure the plane image faces left while flying left */
-    animation: mainPlaneMoveLeft 55s linear infinite;
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveLeft 55s linear infinite;
+    animation-delay: 0.25s, 0s;
 }
 
 .background-animated .plane1 {
     top: 22%;
     left: 45%;
-    animation: mainPlaneMoveRight 40s linear infinite;
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveRight 40s linear infinite;
+    animation-delay: 0.30s, 0s;
 }
 
 .background-animated .plane2 {
@@ -153,7 +157,8 @@
     left: 60%;
     /* Ensure the plane image faces left while flying left */
     transform: translateX(-50%) scaleX(1);
-    animation: mainPlaneMoveLeft 55s linear infinite;
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveLeft 55s linear infinite;
+    animation-delay: 0.45s, 0s;
 }
 
 .background-animated .plane3 {
@@ -181,7 +186,8 @@
     height: 80px;
     z-index: 2;
     transform: translateX(-50%);
-    animation: mainSantaFly 60s linear infinite;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainSantaFly 60s linear infinite;
+    animation-delay: 0.20s, 0s;
     will-change: transform, opacity;
     backface-visibility: hidden;
 }
@@ -198,6 +204,23 @@
     80% { transform: translateX(calc(130vw - 50%)) translateY(20px); }
     90% { transform: translateX(calc(150vw - 50%)) translateY(0); }
     100% { transform: translateX(calc(170vw - 50%)) translateY(0); opacity: 0.7; }
+}
+
+/* Background intro animation (short) used together with movement animations */
+@keyframes bgIntro {
+    0% { opacity: 0; transform: translateY(8px) scale(.98); }
+    60% { opacity: 0.95; transform: translateY(-2px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background-animated .cloud,
+    .background-animated .plane,
+    .background-animated .santa {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 .overlay {
@@ -330,3 +353,29 @@
         top: 72px
     }
 }
+
+/* Entry animations */
+@keyframes enterUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    60% { opacity: 0.9; transform: translateY(-2px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes enterFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.enter-up { animation: enterUp .6s cubic-bezier(.2,.9,.2,1) both; }
+.enter-fade { animation: enterFade .5s ease both; }
+
+.stagger > * { opacity: 0; transform: translateY(8px); animation: enterUp .6s cubic-bezier(.2,.9,.2,1) both; }
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger > *:nth-child(3) { animation-delay: 0.20s; }
+.stagger > *:nth-child(4) { animation-delay: 0.28s; }
+.stagger > *:nth-child(5) { animation-delay: 0.36s; }
+
+/* Slightly scale popup content on entry */
+.popup-enter { animation: popupIn .5s cubic-bezier(.2,.9,.2,1) both; }
+@keyframes popupIn { 0% { opacity: 0; transform: scale(.98) translateY(6px); } 100% { opacity:1; transform: scale(1) translateY(0); } }

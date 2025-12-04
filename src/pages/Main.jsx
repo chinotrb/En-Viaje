@@ -31,12 +31,12 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
       <div className="overlay"></div>
 
       {/* Encabezado fijo */}
-      <header className="header-fixed">
+      <header className="header-fixed enter-up">
         <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: '#E6A9B5', letterSpacing: 2 }}>A.L.L <span role="img" aria-label="corazon"></span></Typography>
       </header>
 
       {/* Luces navideñas animadas */}
-      <div className="christmas-lights">
+      <div className="christmas-lights enter-fade">
         <div className="christmas-light red"></div>
         <div className="christmas-light green"></div>
         <div className="christmas-light yellow"></div>
@@ -51,9 +51,9 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
         <div className="christmas-light purple"></div>
       </div>
 
-      <Box sx={{ zIndex: 2, width: '100%', maxWidth: 480, textAlign: 'center', mt: 10 }}>
+      <Box className="stagger" sx={{ zIndex: 2, width: '100%', maxWidth: 480, textAlign: 'center', mt: 10 }}>
         {/* Mensaje motivacional y contador de días en la misma fila */}
-        <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 4, justifyContent: 'center' }}>
+        <Box className="stagger" sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 4, justifyContent: 'center' }}>
           {/* Mensaje motivacional */}
           <Card sx={{ flex: 1, boxShadow: 3, borderRadius: 4 }}>
             <CardContent>
@@ -80,7 +80,7 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
         {/* Contador de horas para jueves 3 PM oculto */}
 
         {/* Frase diaria */}
-        <Card sx={{ mb: 4, boxShadow: 3, borderRadius: 4 }}>
+        <Card className="enter-up" sx={{ mb: 4, boxShadow: 3, borderRadius: 4 }}>
           <CardContent>
             <Typography variant="overline" sx={{ color: '#b56d87', letterSpacing: 2 }}>DON'T FORGET</Typography>
             <Typography variant="h5" sx={{ fontStyle: 'italic', color: '#333', mb: 1 }}>
@@ -92,13 +92,13 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
 
 
         {/* Botones en columna (excepto música) */}
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 2 }}>
+        <Box className="stagger" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 2 }}>
           {/* Botón carta semanal */}
-          <Button variant="outlined" startIcon={<MailOutlineIcon />} className="unique-btn" onClick={() => setShowLetter(true)}>
+          <Button variant="outlined" startIcon={<MailOutlineIcon />} className="unique-btn enter-up" onClick={() => setShowLetter(true)}>
             Read Weekly Letter
           </Button>
           {/* Botones de álbum y leer cartas en la misma fila */}
-          <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 1, justifyContent: 'center' }}>
+          <Box className="stagger" sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 1, justifyContent: 'center' }}>
             <Button
               variant="contained"
               color="primary"
@@ -117,7 +117,7 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
             </Button>
           </Box>
           {/* Cerrar sesión */}
-          <Button variant="contained" color="secondary" onClick={onLock} className="unique-btn logout-btn">Cerrar sesión</Button>
+          <Button variant="contained" color="secondary" onClick={onLock} className="unique-btn logout-btn enter-up">Cerrar sesión</Button>
         </Box>
 
         {/* Botón música en esquina inferior derecha */}
