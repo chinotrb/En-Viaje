@@ -85,6 +85,23 @@ export const dailyPhrases = [
   { lang: "한국어", text: "너 없이 잠드는 게 제일 힘들어", flag: "보고 싶어" },
 ];
 
+// Frases específicas para el modal de 'Frases que dicen los señores'
+// El usuario puede añadir sus frases aquí. Formato:
+// { lang: "Español", text: "Aquí va la frase", flag: "Etiqueta opcional" }
+export const phatherphrases = [
+  { lang: "Celina", text: "\"Ella si es bonita, se cuida bastante\"", flag: "Celina" },
+  { lang: "May", text: "\"La mejora de la rama familiar\"", flag: "Celina" },
+  { lang: "Celina", text: "\"Que te duela, asi aprendes\"", flag: "Celina" },
+  { lang: "May", text: "\"Vuelve el perro arrepentido 🎵\"", flag: "May" },
+  { lang: "May", text: "\"Es bueno que sienta lo bonito, pero aprende mas de lo feo\"", flag: "May" },
+  { lang: "Celina", text: "\"sienta sienta lo que se perdio por 3 años,  \"", flag: "Celina" },
+  { lang: "Celina", text: "\"Que le duela es bueno asi va a valorar mas\"", flag: "Celina" },
+  { lang: "May", text: "\"aaaaaa que bonito, ahora si va a tomar buenas elecciones?\"", flag: "May" },
+  { lang: "May", text: "\"Abi es bastante inteligente, por que sera que le gusta usted...? \"", flag: "May" },
+  { lang: "Celina", text: "\"Matthew te la va a quitar\"", flag: "Celina" },
+  { lang: "Celina", text: "\"Ella si puede cuidar a los boys con usted\"", flag: "Celina" },
+];
+
 export const motivationalMessages = [
   // Español
   { lang: "Español", text: "Hoy es un nuevo día para brillar más fuerte que ayer." },

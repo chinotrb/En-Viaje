@@ -3,6 +3,7 @@ import LockScreen from './pages/LockScreen'
 import Main from './pages/Main'
 import PhotoAlbum from './components/PhotoAlbum'
 import LettersModal from './components/LettersModal'
+import FrasesModal from './components/FrasesModal'
 import './main.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [snowflakes, setSnowflakes] = useState([])
   const [showAlbum, setShowAlbum] = useState(false)
   const [showLetters, setShowLetters] = useState(false)
+  const [showFrases, setShowFrases] = useState(false)
 
   // Generar copos de nieve al cargar
   useEffect(() => {
@@ -81,6 +83,7 @@ function App() {
           onLock={lock}
           onShowAlbum={() => setShowAlbum(true)}
           onShowLetters={() => setShowLetters(true)}
+          onShowFrases={() => setShowFrases(true)}
         />
       ) : <LockScreen onUnlock={unlock} />}
       {/* Botón bonito para abrir el álbum de fotos */}
@@ -92,6 +95,9 @@ function App() {
       {/* Modal de cartas semanales */}
       {showLetters && (
         <LettersModal onClose={() => setShowLetters(false)} />
+      )}
+      {showFrases && (
+        <FrasesModal onClose={() => setShowFrases(false)} />
       )}
       {showInstall && isMobile && (
         <button

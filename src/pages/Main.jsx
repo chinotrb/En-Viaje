@@ -13,7 +13,7 @@ import PauseIcon from '@mui/icons-material/Pause';
 import FlightIcon from '@mui/icons-material/Flight';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
-export default function Home({ onLock, onShowAlbum, onShowLetters }) {
+export default function Home({ onLock, onShowAlbum, onShowLetters, onShowFrases }) {
   const { daysLeft, hoursToThursday, currentPhrase, currentMotivational, currentLetter } = useMainData();
   const [showLetter, setShowLetter] = useState(false);
   const [playMusic, setPlayMusic] = useState(false);
@@ -90,6 +90,14 @@ export default function Home({ onLock, onShowAlbum, onShowLetters }) {
               onClick={onShowAlbum}
             >
               📸 Album
+            </Button>
+            <Button
+              variant="contained"
+              color="info"
+              className="unique-btn btn-frases"
+              onClick={onShowFrases}
+            >
+              💬 frases
             </Button>
             <Button
               variant="contained"
