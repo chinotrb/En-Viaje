@@ -216,18 +216,35 @@ llorando un poco pero eso es lo de menos jejej`
   // Semana 3
   {
     week: 3,
-    title: "Día 7: Todavía te siento aquí",
-    text: `Ya pasó una semana y todavía se me hace extraño no oír tu voz en persona, no verte reír cerca, no sentir tu energía bonita alrededor.
+    title: "No hace mucho que te fuiste ",
+    text: `Ya pasó la primera semana desde que llegaste… y todavía siento esa mezcla hermosa entre alivio y emoción.
+ Alivio porque todo salió bien, porque llegaste sana, porque ya te estás adaptando a ese nuevo mundo que ahora te rodea.
 
-Pero aunque estés lejos… no te fuiste.  
-No de mí.
+ Y emoción… porque sé que te esperan experiencias que te van a llenar el alma, aprendizajes nuevos, momentos que te harán sonreír sin darte cuenta.
+ Desde aquí, lo único que deseo es que cada paso que des sea suave, que todo te salga de la mejor manera, que la vida te abrace bonito.
 
-Cada cosa linda que vivís me alegra. Cada foto, cada mensaje, cada pasito tuyo me hace sentir más cerca aunque el mapa diga otra cosa.
+Y aun así, entre toda esa alegría por ti, no puedo evitar sentir lo fuerte que has llegado a ser en mi corazón.
 
-No sé si te pasa, pero yo cada noche te pienso un ratito antes de dormir.  
-Y te extraño con cariño, no con tristeza.
+ Eres la mejor, eres mi niña única, y aunque mis emociones se mueven como olas.... unas altas, otras suaves.... hay una constante en mi mente desde siempre.....
+ sabes que siempre fuiste tu 
 
-Solo quería que supieras que estoy bien… y que te extraño bonito.`
+eres mi pensamiento, eres mi calma, eres tormenta bonita…
+ Y en las noches, cuando el corazón se pone más frágil, él hace lo único que sabe: extrañarte.....
+
+ Desea escucharte, verte, abrazarte, olerte …
+ Hay tanto que quiero contarte, tanto que quisiera decirte sin límites.
+
+A pesar de cuánto te extraño, lo único que quiero es que tu camino allá sea perfecto, que te salga todo bien, que cada día te demuestre lo fuerte y capaz que eres.
+ Sé que lo vas a lograr todo… porque creo en ti con un amor tan grande que no me que mi corazon tukun tukun tukun.
+
+Y espero con ansias ,con muchas ansias de verdad, el día en que te vuelva a ver.
+ El día en que me cuentes todo lo que viviste, lo que sentiste, lo que descubriste en ese viaje que ahora estás empezando.
+Te quiero con todo mi corazón, con todo mi ser.
+
+ Y esta distancia… solo hace que mi mente se llene de más y más y más locuras por hacer, todo con tal de hacerte feliz.
+Aquí, desde mi mundo, te estoy extrañando como siempre pero como nunca.
+
+solo es un " hasta pronto "...... verdad ? `
   },
   // Semana 4
   {
