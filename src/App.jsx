@@ -14,19 +14,43 @@ function App() {
   const [showAlbum, setShowAlbum] = useState(false)
   const [showLetters, setShowLetters] = useState(false)
   const [showFrases, setShowFrases] = useState(false)
+  const [theme, setTheme] = useState('cielo')
 
   // Generar copos de nieve al cargar
+  // Aplicar tema guardado y guardarlo cuando cambie
   useEffect(() => {
-      const flakes = Array.from({ length: 40 }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        delay: Math.random() * 8,
-        size: 12 + Math.random() * 16,
-        duration: 7 + Math.random() * 7,
-        char: '•',
-      }))
-      setSnowflakes(flakes)
+    try {
+      const saved = localStorage.getItem('theme')
+      if (saved === 'oceano' || saved === 'cielo') setTheme(saved)
+    } catch (e) {
+      // no-op
+    }
   }, [])
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.body.classList.remove('theme-cielo', 'theme-oceano')
+      document.body.classList.add(`theme-${theme}`)
+    }
+    try {
+      localStorage.setItem('theme', theme)
+    } catch (e) {
+      // no-op
+    }
+  }, [theme])
+
+  // Generar copos de nieve una sola vez al montar el componente
+  useEffect(() => {
+    const flakes = Array.from({ length: 40 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      delay: Math.random() * 8,
+      size: 12 + Math.random() * 16,
+      duration: 7 + Math.random() * 7,
+      char: '•',
+    }))
+    setSnowflakes(flakes)
+  }, []) 
   useEffect(() => {
     if (localStorage.getItem('isUnlocked') === 'true') {
       setIsUnlocked(true)
@@ -86,6 +110,50 @@ function App() {
           onShowFrases={() => setShowFrases(true)}
         />
       ) : <LockScreen onUnlock={unlock} />}
+
+      {/* Selector de tema: Cielo (visual actual) / Océano (temática marina) */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 12,
+          right: 12,
+          zIndex: 200,
+          display: 'flex',
+          gap: 8,
+          alignItems: 'center'
+        }}
+      >
+        <button
+          onClick={() => setTheme('cielo')}
+          aria-pressed={theme === 'cielo'}
+          title="Tema Cielo"
+          style={{
+            padding: '8px 12px',
+            borderRadius: 999,
+            border: theme === 'cielo' ? '2px solid #ffd1dc' : '1px solid transparent',
+            background: theme === 'cielo' ? '#ff6b9d' : 'rgba(0,0,0,0.25)',
+            color: '#fff',
+            cursor: 'pointer'
+          }}
+        >
+          🌤️ Cielo
+        </button>
+        <button
+          onClick={() => setTheme('oceano')}
+          aria-pressed={theme === 'oceano'}
+          title="Tema Océano"
+          style={{
+            padding: '8px 12px',
+            borderRadius: 999,
+            border: theme === 'oceano' ? '2px solid #a6efff' : '1px solid transparent',
+            background: theme === 'oceano' ? '#0c6b8a' : 'rgba(0,0,0,0.25)',
+            color: '#fff',
+            cursor: 'pointer'
+          }}
+        >
+          🌊 Océano
+        </button>
+      </div>
       {/* Botón bonito para abrir el álbum de fotos */}
       {/* Los botones de álbum y leer cartas ahora se mostrarán en Main.jsx debajo del botón de carta semanal */}
       {/* Modal del álbum de fotos */}

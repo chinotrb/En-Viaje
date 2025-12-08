@@ -38,9 +38,17 @@
   line-height: 1.5;
   font-weight: 400;
 
+  /* Variables para temas (Cielo por defecto) */
+  --bg-color: #242424;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --button-bg: #1a1a1a;
+  --link-hover: #535bf2;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+
+  /* Transiciones suaves al cambiar tema */
+  transition: background 0.6s ease, color 0.4s ease;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -77,9 +85,9 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s, color 0.25s;
 }
 button:hover {
   border-color: #646cff;
@@ -91,13 +99,50 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --text-color: #213547;
+    --bg-color: #ffffff;
+    --button-bg: #f9f9f9;
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--button-bg);
   }
 }
+
+/* Temas personalizados: 'cielo' mantiene la apariencia actual.
+   'oceano' aplica una paleta y fondo marino. Solo visual, sin cambios funcionales. */
+body.theme-cielo {
+  /* No se necesitan reglas: mantiene estilos por defecto */
+}
+
+body.theme-oceano {
+  /* Fondo degradado marino; variables para colores de elementos */
+  background: linear-gradient(180deg, #032c45 0%, #0b4763 45%, #6fc7e8 100%);
+  --text-color: rgba(250, 250, 250, 0.96);
+  --button-bg: rgba(6, 86, 116, 0.85);
+}
+
+body.theme-oceano a {
+  color: #bfefff;
+}
+
+body.theme-oceano a:hover {
+  color: #e6ffff;
+}
+
+body.theme-oceano button {
+  background-color: var(--button-bg);
+  color: #eaf8ff;
+}
+
+body.theme-oceano button:hover {
+  filter: brightness(1.05);
+}
+
+/* Ajustes de elementos concretos para que se integren con la paleta marina */
+.snowflake {
+  /* Mantener copos neutrales, no afectan funcionalidad */
+}
+
