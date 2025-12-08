@@ -16,8 +16,6 @@ function App() {
   const [showFrases, setShowFrases] = useState(false)
   const [theme, setTheme] = useState('cielo')
 
-  // Generar copos de nieve al cargar
-  // Aplicar tema guardado y guardarlo cuando cambie
   useEffect(() => {
     try {
       const saved = localStorage.getItem('theme')
@@ -39,28 +37,29 @@ function App() {
     }
   }, [theme])
 
-  // Generar copos de nieve una sola vez al montar el componente
+  // Generar copos de nieve o burbujas según el tema
   useEffect(() => {
+    const charSet = theme === 'oceano' ? ['○', '◦', '•'] : ['❄', '✻', '✼']
     const flakes = Array.from({ length: 40 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: Math.random() * 8,
       size: 12 + Math.random() * 16,
       duration: 7 + Math.random() * 7,
-      char: '•',
+      char: charSet[Math.floor(Math.random() * charSet.length)],
     }))
     setSnowflakes(flakes)
-  }, []) 
+  }, [theme])
+
   useEffect(() => {
     if (localStorage.getItem('isUnlocked') === 'true') {
       setIsUnlocked(true)
     }
-    // Registrar el evento solo una vez
     const handler = (e) => {
       e.preventDefault()
       setDeferredPrompt(e)
       setShowInstall(true)
-      console.log('beforeinstallprompt capturado, mostrando botón de instalación')
+      console.log('beforeinstallprompt capturado, mostrando boton de instalacion')
     }
     window.addEventListener('beforeinstallprompt', handler)
     return () => window.removeEventListener('beforeinstallprompt', handler)
@@ -82,17 +81,16 @@ function App() {
     }
   }
 
-  // Solo mostrar el botón en móvil y si es instalable
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 600px)').matches
 
   return (
     <>
-      {/* Animación de nieve */}
+      {/* Animacion de nieve/burbujas */}
       <div className="snow">
         {snowflakes.map(flake => (
           <span
             key={flake.id}
-            className="snowflake"
+            className={`snowflake ${theme === 'oceano' ? 'bubble' : ''}`}
             style={{
               left: `${flake.left}%`,
               fontSize: `${flake.size}px`,
@@ -104,6 +102,7 @@ function App() {
       </div>
       {isUnlocked ? (
         <Main
+          theme={theme}
           onLock={lock}
           onShowAlbum={() => setShowAlbum(true)}
           onShowLetters={() => setShowLetters(true)}
@@ -111,7 +110,7 @@ function App() {
         />
       ) : <LockScreen onUnlock={unlock} />}
 
-      {/* Selector de tema: Cielo (visual actual) / Océano (temática marina) */}
+      {/* Selector de tema: Cielo (visual actual) / Oceano (paleta marina) */}
       <div
         style={{
           position: 'fixed',
@@ -130,33 +129,34 @@ function App() {
           style={{
             padding: '8px 12px',
             borderRadius: 999,
-            border: theme === 'cielo' ? '2px solid #ffd1dc' : '1px solid transparent',
-            background: theme === 'cielo' ? '#ff6b9d' : 'rgba(0,0,0,0.25)',
+            border: theme === 'cielo' ? '2px solid var(--accent-soft)' : '1px solid var(--surface-border)',
+            background: theme === 'cielo' ? 'var(--btn-gradient-a)' : 'rgba(0,0,0,0.25)',
             color: '#fff',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            boxShadow: theme === 'cielo' ? '0 6px 16px rgba(0,0,0,0.18)' : '0 2px 8px rgba(0,0,0,0.18)'
           }}
         >
-          🌤️ Cielo
+          Cielo
         </button>
         <button
           onClick={() => setTheme('oceano')}
           aria-pressed={theme === 'oceano'}
-          title="Tema Océano"
+          title="Tema Oceano"
           style={{
             padding: '8px 12px',
             borderRadius: 999,
-            border: theme === 'oceano' ? '2px solid #a6efff' : '1px solid transparent',
-            background: theme === 'oceano' ? '#0c6b8a' : 'rgba(0,0,0,0.25)',
+            border: theme === 'oceano' ? '2px solid var(--accent-highlight)' : '1px solid var(--surface-border)',
+            background: theme === 'oceano' ? 'var(--btn-gradient-b)' : 'rgba(0,0,0,0.25)',
             color: '#fff',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            boxShadow: theme === 'oceano' ? '0 6px 16px rgba(0,0,0,0.22)' : '0 2px 8px rgba(0,0,0,0.18)'
           }}
         >
-          🌊 Océano
+          Oceano
         </button>
       </div>
-      {/* Botón bonito para abrir el álbum de fotos */}
-      {/* Los botones de álbum y leer cartas ahora se mostrarán en Main.jsx debajo del botón de carta semanal */}
-      {/* Modal del álbum de fotos */}
+
+      {/* Modal del Album de fotos */}
       {showAlbum && (
         <PhotoAlbum onClose={() => setShowAlbum(false)} />
       )}

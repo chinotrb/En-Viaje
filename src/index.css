@@ -17,7 +17,7 @@
   height: 28px;
   border-radius: 50% 50% 60% 60%;
   margin: 0 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   opacity: 0.85;
   animation: blink 1.5s infinite;
 }
@@ -33,116 +33,77 @@
   0%, 100% { opacity: 0.85; filter: brightness(1); }
   50% { opacity: 1; filter: brightness(1.5); }
 }
+
+/* === Variables de tema (Cielo por defecto) === */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', 'Playfair Display', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* Variables para temas (Cielo por defecto) */
-  --bg-color: #242424;
-  --text-color: rgba(255, 255, 255, 0.87);
-  --button-bg: #1a1a1a;
-  --link-hover: #535bf2;
-  color-scheme: light dark;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-
-  /* Transiciones suaves al cambiar tema */
-  transition: background 0.6s ease, color 0.4s ease;
-
-  font-synthesis: none;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: background 0.8s ease, color 0.4s ease;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --bg-gradient: linear-gradient(120deg, #d4a9e6 0%, #f7d9e7 60%, #e6a9b5 100%);
+  --overlay-glow: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.06), transparent 20%), linear-gradient(180deg, rgba(230, 169, 181, 0.03), transparent 50%);
+  --title-color: #E6A9B5;
+  --text-main: #333333;
+  --text-subtle: #b56d87;
+  --text-strong: #d15b7f;
+  --accent-highlight: #ff6b9d;
+  --accent-soft: #E6A9B5;
+  --accent-alt: #A9CFE6;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  --glass-header: rgba(255, 255, 255, 0.7);
+  --btn-gradient-a: linear-gradient(90deg, #E6A9B5 0%, #D4A9E6 100%);
+  --btn-gradient-b: linear-gradient(90deg, #A9CFE6 0%, #E6A9B5 100%);
+  --surface-border: rgba(255, 255, 255, 0.7);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  background: var(--bg-gradient);
+  color: var(--text-main);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--button-bg);
-  cursor: pointer;
-  transition: background-color 0.25s, border-color 0.25s, color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --text-color: #213547;
-    --bg-color: #ffffff;
-    --button-bg: #f9f9f9;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: var(--button-bg);
-  }
-}
-
-/* Temas personalizados: 'cielo' mantiene la apariencia actual.
-   'oceano' aplica una paleta y fondo marino. Solo visual, sin cambios funcionales. */
+/* Tema Cielo: mantiene la apariencia original rosada */
 body.theme-cielo {
-  /* No se necesitan reglas: mantiene estilos por defecto */
+  --bg-gradient: linear-gradient(120deg, #d4a9e6 0%, #f7d9e7 60%, #e6a9b5 100%);
+  --overlay-glow: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.06), transparent 20%), linear-gradient(180deg, rgba(230, 169, 181, 0.03), transparent 50%);
+  --title-color: #E6A9B5;
+  --text-main: #333333;
+  --text-subtle: #b56d87;
+  --text-strong: #d15b7f;
+  --accent-highlight: #ff6b9d;
+  --accent-soft: #E6A9B5;
+  --accent-alt: #A9CFE6;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  --glass-header: rgba(255, 255, 255, 0.7);
+  --btn-gradient-a: linear-gradient(90deg, #E6A9B5 0%, #D4A9E6 100%);
+  --btn-gradient-b: linear-gradient(90deg, #A9CFE6 0%, #E6A9B5 100%);
+  --surface-border: rgba(255, 255, 255, 0.7);
 }
 
+/* Tema Océano: paleta marina */
 body.theme-oceano {
-  /* Fondo degradado marino; variables para colores de elementos */
-  background: linear-gradient(180deg, #032c45 0%, #0b4763 45%, #6fc7e8 100%);
-  --text-color: rgba(250, 250, 250, 0.96);
-  --button-bg: rgba(6, 86, 116, 0.85);
+  --bg-gradient: linear-gradient(180deg, #032c45 0%, #0b4763 50%, #2c9ac5 100%);
+  --overlay-glow: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.08), transparent 20%), linear-gradient(180deg, rgba(24, 110, 142, 0.22), rgba(4, 32, 56, 0.65));
+  --title-color: #8ce3ff;
+  --text-main: #eaf8ff;
+  --text-subtle: #c7e9f7;
+  --text-strong: #ffffff;
+  --accent-highlight: #a6efff;
+  --accent-soft: #1fb0d0;
+  --accent-alt: #77d2f3;
+  --card-bg: rgba(7, 54, 79, 0.55);
+  --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  --glass-header: rgba(5, 47, 72, 0.65);
+  --btn-gradient-a: linear-gradient(90deg, #0d7aa3 0%, #1fb0d0 100%);
+  --btn-gradient-b: linear-gradient(90deg, #1fb0d0 0%, #77d2f3 100%);
+  --surface-border: rgba(255, 255, 255, 0.15);
 }
-
-body.theme-oceano a {
-  color: #bfefff;
-}
-
-body.theme-oceano a:hover {
-  color: #e6ffff;
-}
-
-body.theme-oceano button {
-  background-color: var(--button-bg);
-  color: #eaf8ff;
-}
-
-body.theme-oceano button:hover {
-  filter: brightness(1.05);
-}
-
-/* Ajustes de elementos concretos para que se integren con la paleta marina */
-.snowflake {
-  /* Mantener copos neutrales, no afectan funcionalidad */
-}
-

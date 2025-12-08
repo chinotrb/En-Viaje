@@ -1,10 +1,11 @@
-/* ==== FONDO ROMÁNTICO + BURBUJAS (del main.html original) ==== */
+/* ==== FONDO ROMÁNTICO + BURBUJAS ==== */
 body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #d4a9e6 0%, #f7d9e7 60%, #e6a9b5 100%);
-  transition: background 2s ease;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  transition: background 0.8s ease, color 0.4s ease;
 }
 
 /* ==== ANIMACIÓN DE NIEVE ==== */
@@ -25,102 +26,101 @@ body {
   animation: snowFall linear infinite;
 }
 
+.snowflake.bubble {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
 @keyframes snowFall {
   0% { transform: translateY(0) scale(1); opacity: 0.9; }
   80% { opacity: 0.95; }
   100% { transform: translateY(100vh) scale(1.1); opacity: 0.3; }
 }
-/* ==== FONDOS SEGÚN DÍAS RESTANTES ==== */
 
-.bg-far { background: linear-gradient(135deg, #e0f2fe 0%, #f7d9e7 100%); }     /* +60 días */
-.bg-medium { background: linear-gradient(135deg, #e9d5ff 0%, #fad7de 100%); } /* 30-60 */
-.bg-close { background: linear-gradient(135deg, #fecaca 0%, #ffd7ba 100%); }  /* -30 */
-.bg-today { background: linear-gradient(135deg, #fff1eb 0%, #fce7f3 100%); }  /* 0 días */
+/* ==== FONDOS SEGÚN DÍAS RESTANTES ==== */
+.bg-far { background: linear-gradient(135deg, #e0f2fe 0%, #f7d9e7 100%); }
+.bg-medium { background: linear-gradient(135deg, #e9d5ff 0%, #fad7de 100%); }
+.bg-close { background: linear-gradient(135deg, #fecaca 0%, #ffd7ba 100%); }
+.bg-today { background: linear-gradient(135deg, #fff1eb 0%, #fce7f3 100%); }
 
 .header-message {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #c57a8a;
+  color: var(--text-subtle);
   text-align: center;
   margin: 2rem 1rem 1rem;
   padding: 1rem;
-  background: rgba(255,255,255,0.7);
+  background: var(--card-bg);
   border-radius: 20px;
   backdrop-filter: blur(10px);
+  box-shadow: var(--card-shadow);
 }
 
 .countdown {
   font-size: 7rem;
   font-weight: 800;
-  color: #d15b7f;
+  color: var(--text-strong);
   text-align: center;
-  text-shadow: 0 10px 30px rgba(209,91,127,0.3);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
   animation: pulse 3s ease-in-out infinite;
 }
 
 .countdown-sub {
   font-size: 1.6rem;
-  color: #b56d87;
+  color: var(--text-subtle);
   margin-top: -10px;
-}
-
-.overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
- /* z-index: 1; */
 }
 
 .daily-message {
   max-width: 600px;
   margin: 3rem auto;
   padding: 2rem;
-  background: rgba(255,255,255,0.8);
+  background: var(--card-bg);
   border-radius: 24px;
   text-align: center;
   font-size: 1.7rem;
   font-family: 'Times';
-  color: #a15678;
+  color: var(--text-subtle);
   backdrop-filter: blur(10px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  box-shadow: var(--card-shadow);
 }
-
 
 /* ==== BOTONES ÚNICOS ==== */
 .unique-btn {
-  background: linear-gradient(90deg, #e6a9b5 0%, #d4a9e6 100%);
+  background: var(--btn-gradient-a);
   color: #fff !important;
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: 1.1rem;
   border: none;
   border-radius: 14px;
-  box-shadow: 0 4px 16px #d4a9e6;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   padding: 14px 28px;
   margin-bottom: 12px;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
 .unique-btn:hover {
   transform: scale(1.07);
-  background: linear-gradient(90deg, #d4a9e6 0%, #e6a9b5 100%);
+  background: var(--btn-gradient-b);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
 }
 
 .unique-btn-text {
-  background: linear-gradient(90deg, #d4a9e6 0%, #e6a9b5 100%);
+  background: var(--btn-gradient-a);
   color: #fff !important;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: 1.1rem;
   border: none;
   border-radius: 14px;
-  box-shadow: 0 2px 8px #d4a9e6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   padding: 10px 22px;
   margin-bottom: 8px;
   transition: transform 0.2s, background 0.2s;
 }
 .unique-btn-text:hover {
   transform: scale(1.07);
-  background: linear-gradient(90deg, #e6a9b5 0%, #d4a9e6 100%);
+  background: var(--btn-gradient-b);
 }
 
 @keyframes pulse {
@@ -128,39 +128,35 @@ body {
   50% { transform: scale(1.05); }
 }
 
-
-
 /* ==== ESTILOS DE LA CARTA ==== */
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
-  color: #E6A9B5;
+  color: var(--title-color);
   letter-spacing: 3px;
   font-weight: 700;
 }
 
-
 .carta-title {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  color: #E6A9B5;
+  color: var(--accent-soft);
   text-align: center;
   margin-bottom: 24px;
 }
 
 .carta-text {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #333;
-  background: rgba(255,255,255,0.85);
-  padding: 24px;
-  border-radius: 18px;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: 20px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 10px 40px rgba(230,169,181,0.2);
-  max-width: 98vw;
+  box-shadow: var(--card-shadow);
+  max-width: 600px;
+  margin: 0 auto;
   word-break: break-word;
-  overflow-wrap: break-word;
-  box-sizing: border-box;
 }
 
 @media (max-width: 600px) {
@@ -177,20 +173,7 @@ body {
   }
 }
 
-.carta-text {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: #333;
-  background: rgba(255,255,255,0.85);
-  padding: 32px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 40px rgba(230,169,181,0.2);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* ==== PANTALLA DE LOGIN CON NUBES (la más linda) ==== */
+/* ==== PANTALLA DE LOGIN CON NUBES ==== */
 .login-scene {
   height: 100vh;
   width: 100%;
@@ -199,7 +182,7 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(to bottom, #a7d8ff 0%, #ffdfe8 60%, #ffd9c7 100%);
+  background: var(--bg-gradient);
 }
 
 .cloud {
@@ -234,10 +217,11 @@ body {
 }
 
 .login-card {
-  background: rgba(255,255,255,0.93);
+  background: var(--card-bg);
   padding: 40px 32px;
   border-radius: 24px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--surface-border);
   backdrop-filter: blur(10px);
   text-align: center;
   max-width: 420px;
@@ -245,43 +229,461 @@ body {
 }
 
 .login-card h1 {
-  color: #102a43;
+  color: var(--text-main);
   margin: 0 0 8px;
   font-size: 1.6rem;
 }
 
 .login-card p {
-  color: #184e63;
+  color: var(--text-subtle);
   margin: 0 0 24px;
 }
 
 .login-card input {
   padding: 14px 16px;
-  border: 2px solid #c9eaf2;
+  border: 2px solid var(--accent-alt);
   border-radius: 12px;
   font-size: 1.1rem;
   width: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-main);
 }
 
 .login-card button {
   padding: 14px 24px;
-  background: #ffd166;
+  background: var(--btn-gradient-a);
   border: none;
   border-radius: 12px;
   font-weight: 600;
-  color: #102a43;
+  color: #0f3044;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(255,211,102,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 @keyframes openEnvelope {
   0% { transform: scale(1); }
   100% { transform: scale(1.5); clip-path: none; }
 }
+
 /* Animaciones extra */
 @keyframes heartFall {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(100vh); opacity: 0; }
 }
-/* Mejoras generales */
-body { cursor: heart; }  /* Cursor de corazón */
-.logo { text-shadow: 0 2px 10px #ff6b9d; }
+
+.logo { text-shadow: 0 2px 10px var(--accent-soft); }
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+}
+
+.fade-in {
+    animation: fadeIn .6s ease both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.background-animated {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.background-animated .cloud {
+    position: absolute;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.8));
+    filter: blur(2px);
+    transform: translateX(-50%);
+    will-change: transform, opacity;
+    transform-origin: center;
+    backface-visibility: hidden;
+}
+
+.background-animated .cloud1 {
+    top: 12%;
+    left: 40%;
+    width: 220px;
+    height: 70px;
+    border-radius: 50px;
+    opacity: 0.75;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveRight 60s linear infinite;
+    animation-delay: 0.05s, 0s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.background-animated .cloud2 {
+    top: 32%;
+    left: 60%;
+    width: 320px;
+    height: 90px;
+    border-radius: 60px;
+    opacity: 0.7;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveLeft 80s linear infinite;
+    animation-delay: 0.20s, 0s;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+}
+
+.background-animated .cloud3 {
+    top: 58%;
+    left: 35%;
+    width: 180px;
+    height: 60px;
+    border-radius: 40px;
+    opacity: 0.65;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveRight 70s linear infinite;
+    animation-delay: 0.35s, 0s;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.background-animated .cloud4 {
+    top: 70%;
+    left: 70%;
+    width: 200px;
+    height: 60px;
+    border-radius: 40px;
+    opacity: 0.6;
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainCloudMoveLeft 90s linear infinite;
+    animation-delay: 0.50s, 0s;
+    box-shadow: 0 9px 26px rgba(0,0,0,0.05);
+}
+@keyframes mainCloudMoveRight {
+    0% {
+        transform: translateX(-50%) translateY(0) scale(1);
+        opacity: 0.85;
+    }
+    25% {
+        transform: translateX(calc(30vw - 50%)) translateY(-6px) scale(1.02);
+        opacity: 0.95;
+    }
+    50% {
+        transform: translateX(calc(60vw - 50%)) translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translateX(calc(90vw - 50%)) translateY(6px) scale(0.98);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(calc(140vw - 50%)) translateY(0) scale(1);
+        opacity: 0.5;
+    }
+}
+
+@keyframes mainCloudMoveLeft {
+    0% { transform: translateX(-50%) translateY(0) scale(1); opacity: 0.85; }
+    25% { transform: translateX(calc(-30vw - 50%)) translateY(6px) scale(1.02); opacity: 0.95; }
+    50% { transform: translateX(calc(-60vw - 50%)) translateY(0) scale(1); opacity: 0.9; }
+    75% { transform: translateX(calc(-90vw - 50%)) translateY(-6px) scale(0.98); opacity: 0.8; }
+    100% { transform: translateX(calc(-140vw - 50%)) translateY(0) scale(1); opacity: 0.5; }
+}
+
+.background-animated .plane {
+    position: absolute;
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveRight 65s linear infinite;
+    animation-delay: 0.60s, 0s;
+    height: 60px;
+    z-index: 2;
+    transform: translateX(-50%);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+.background-animated .plane0 {
+    top: 14%;
+    right: 0%;
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveLeft 55s linear infinite;
+    animation-delay: 0.25s, 0s;
+}
+
+.background-animated .plane1 {
+    top: 22%;
+    left: 45%;
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveRight 40s linear infinite;
+    animation-delay: 0.30s, 0s;
+}
+
+.background-animated .plane2 {
+    top: 54%;
+    left: 60%;
+    transform: translateX(-50%) scaleX(1);
+    animation: bgIntro .5s cubic-bezier(.2,.9,.2,1) both, mainPlaneMoveLeft 55s linear infinite;
+    animation-delay: 0.45s, 0s;
+}
+
+.background-animated .plane3 {
+    top: 68%;
+    left: 30%;
+    animation: mainPlaneMoveRight 65s linear infinite;
+}
+@keyframes mainPlaneMoveRight {
+    0% { transform: translateX(-50%); opacity: 0.9; }
+    10% { opacity: 1; }
+    100% { transform: translateX(calc(140vw - 50%)); opacity: 0.5; }
+}
+
+@keyframes mainPlaneMoveLeft {
+    0% { transform: translateX(-50%); opacity: 0.9; }
+    10% { opacity: 1; }
+    100% { transform: translateX(calc(-140vw - 50%)); opacity: 0.5; }
+}
+
+.background-animated .santa {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 120px;
+    height: 80px;
+    z-index: 2;
+    transform: translateX(-50%);
+    animation: bgIntro .6s cubic-bezier(.2,.9,.2,1) both, mainSantaFly 60s linear infinite;
+    animation-delay: 0.20s, 0s;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+/* --- Modo océano: fondo estático marino, flora y tiburones --- */
+body.theme-oceano .background-animated .cloud {
+    display: none;
+}
+
+body.theme-oceano .background-animated .plane {
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+}
+
+body.theme-oceano .santa {
+    display: none !important;
+}
+
+/* Fondo submarino estático */
+body.theme-oceano .page-container {
+    background: radial-gradient(circle at 40% 20%, rgba(120, 220, 255, 0.25), transparent 35%),
+                radial-gradient(circle at 70% 30%, rgba(120, 220, 255, 0.18), transparent 32%),
+                linear-gradient(180deg, rgba(6, 38, 56, 0.85) 0%, rgba(7, 72, 105, 0.8) 45%, rgba(2, 24, 38, 0.92) 100%);
+}
+
+@keyframes mainSantaFly {
+    0% { transform: translateX(-50%) translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    20% { transform: translateX(calc(10vw - 50%)) translateY(-20px); }
+    30% { transform: translateX(calc(30vw - 50%)) translateY(-40px); }
+    40% { transform: translateX(calc(50vw - 50%)) translateY(-20px); }
+    50% { transform: translateX(calc(70vw - 50%)) translateY(0); }
+    60% { transform: translateX(calc(90vw - 50%)) translateY(20px); }
+    70% { transform: translateX(calc(110vw - 50%)) translateY(40px); }
+    80% { transform: translateX(calc(130vw - 50%)) translateY(20px); }
+    90% { transform: translateX(calc(150vw - 50%)) translateY(0); }
+    100% { transform: translateX(calc(170vw - 50%)) translateY(0); opacity: 0.7; }
+}
+
+/* Background intro animation (short) used together with movement animations */
+@keyframes bgIntro {
+    0% { opacity: 0; transform: translateY(8px) scale(.98); }
+    60% { opacity: 0.95; transform: translateY(-2px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .background-animated .cloud,
+    .background-animated .plane,
+    .background-animated .santa {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: var(--overlay-glow);
+}
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--glass-header);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    padding: 12px 0;
+    backdrop-filter: blur(10px);
+}
+
+.christmas-lights {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.christmas-light {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+    animation: blink 1.6s infinite;
+}
+
+.christmas-light.red {
+    background: #ff4d6d;
+    animation-delay: 0s
+}
+
+.christmas-light.green {
+    background: #46d39a;
+    animation-delay: 0.1s
+}
+
+.christmas-light.yellow {
+    background: #ffd166;
+    animation-delay: 0.2s
+}
+
+.christmas-light.blue {
+    background: #75b9ff;
+    animation-delay: 0.3s
+}
+
+.christmas-light.pink {
+    background: #ffb3d2;
+    animation-delay: 0.4s
+}
+
+.christmas-light.purple {
+    background: #c29bff;
+    animation-delay: 0.5s
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.25;
+        transform: scale(.9)
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05)
+    }
+
+    100% {
+        opacity: 0.25;
+        transform: scale(.9)
+    }
+}
+
+.unique-btn {
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+}
+
+.btn-album {
+    background: var(--btn-gradient-a) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+
+.btn-letters {
+    background: var(--btn-gradient-b) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+
+.btn-frases {
+    background: var(--btn-gradient-b) !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+
+.logout-btn {
+    margin-top: 8px !important;
+}
+
+.unique-btn-text {
+}
+
+.audio-hidden {
+    display: none !important;
+}
+
+.popup-icon {
+    font-size: 32px;
+    color: var(--accent-highlight);
+    display: inline-block;
+}
+
+/* small responsive tweaks */
+@media (max-width:480px) {
+    .page-container {
+        padding-bottom: 64px
+    }
+
+    .christmas-lights {
+        top: 72px
+    }
+}
+
+/* Entry animations */
+@keyframes enterUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    60% { opacity: 0.9; transform: translateY(-2px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes enterFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.enter-up { animation: enterUp .6s cubic-bezier(.2,.9,.2,1) both; }
+.enter-fade { animation: enterFade .5s ease both; }
+
+.stagger > * { opacity: 0; transform: translateY(8px); animation: enterUp .6s cubic-bezier(.2,.9,.2,1) both; }
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger > *:nth-child(3) { animation-delay: 0.20s; }
+.stagger > *:nth-child(4) { animation-delay: 0.28s; }
+.stagger > *:nth-child(5) { animation-delay: 0.36s; }
+
+/* Slightly scale popup content on entry */
+.popup-enter { animation: popupIn .5s cubic-bezier(.2,.9,.2,1) both; }
+@keyframes popupIn { 0% { opacity: 0; transform: scale(.98) translateY(6px); } 100% { opacity:1; transform: scale(1) translateY(0); } }
+
+/* Theme-aware tweaks for cards/icons */
+.page-container .MuiCard-root {
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  box-shadow: var(--card-shadow) !important;
+  border: 1px solid var(--surface-border);
+}
+.page-container .MuiTypography-overline { color: var(--text-subtle) !important; letter-spacing: 2px; }
+.page-container .MuiTypography-h6,
+.page-container .MuiTypography-h2,
+.page-container .MuiTypography-h5,
+.page-container .MuiTypography-body1 { color: var(--text-main) !important; }
+.page-container .MuiTypography-body2 { color: var(--text-subtle) !important; }
+.page-container .MuiSvgIcon-root { color: var(--accent-highlight); }

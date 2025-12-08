@@ -9,10 +9,11 @@
   animation: fadeIn 0.4s;
 }
 .letters-modal {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 24px;
   padding: 32px 24px 24px 24px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--surface-border);
   max-width: 480px;
   width: 90vw;
   max-height: 80vh;
@@ -24,7 +25,7 @@
   position: absolute;
   top: 16px;
   right: 16px;
-  background: #A9CFE6;
+  background: var(--accent-alt);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -48,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f7f7fa;
+  background: var(--card-bg);
   border-radius: 14px;
   padding: 12px 18px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
@@ -60,7 +61,7 @@
   margin-top: 2px;
 }
 .read-btn, .back-btn {
-  background: #E6A9B5;
+  background: var(--btn-gradient-a);
   color: #fff;
   border: none;
   border-radius: 18px;
@@ -93,4 +94,25 @@
   font-family: 'Times';
   font-size: 24px;
   font-weight: normal;
+}
+
+/* Ajustes para el tema océano */
+body.theme-oceano .letters-modal-overlay {
+  background: rgba(3, 44, 69, 0.85);
+}
+
+body.theme-oceano .letters-modal {
+  background: rgba(7, 54, 79, 0.7);
+  border: 1px solid var(--surface-border);
+}
+
+body.theme-oceano .letter-item {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+}
+
+body.theme-oceano .letter-content p,
+body.theme-oceano .letter-content pre,
+body.theme-oceano .letter-content h3 {
+  color: var(--text-main);
 }
