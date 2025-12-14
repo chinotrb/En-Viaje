@@ -249,32 +249,66 @@ solo es un " hasta pronto "...... verdad ? `
   // Semana 4
   {
     week: 4,
-    title: "Ya te extraño a otro nivel",
-    text: `Tres semanas… y todavía me sorprende cómo tu ausencia igual llena cosas.
+    title: "Un día más, un día menos",
+    text: `My A.L.L
 
-Extraño tus bromas, tus palabras bonitas, incluso tus enojitos chiquitos.
+Ya han pasado varios días desde que te fuiste, y en este punto el viaje empieza a sentirse distinto.
+Ya no es solo emoción ni expectativa… ahora es vida real.
+Días buenos, días difíciles, momentos que suman y otros que enseñan.
+Personas interesantes, otras no tanto.
+Y aun así, todo va bien. Porque tú estás bien, y eso es lo que importa.
 
-Pero también estoy feliz porque sé que estás viviendo algo que siempre quisiste.  
-Eso me calma el corazón.
+Cada experiencia que vives, cada paso que das allá, me confirma algo que no deja de crecer en mí:
+te quiero más.
+Más con cada día, con cada silencio, con cada pensamiento que vuelve a ti sin pedir permiso.
+No sales de mi cabeza y, lejos de cansarme, eso solo me convence de que lo quiero todo contigo.
 
-Yo voy contando los días con paciencia.  
-No con ansiedad… con amor.`
+Sé que todavía falta mucho camino.
+Que habrá días en los que la cabeza pese, en los que las dudas hablen fuerte, en los que el cansancio quiera ganar.
+Pero también sé que eres fuerte, que eres valiente y que todo este esfuerzo vale la pena.
+Así que seguimos.
+Con todo.
+Un día más y un día menos.
+
+Seguimos adelante, con la fe intacta y la frente en alto.
+Paso a paso, incluso cuando cueste.
+Yo estoy aquí, creyendo en ti, sosteniéndote desde la distancia,
+esperando el día en que todo esto se convierta en historias contadas frente a frente.
+
+Siempre tú.
+Siempre nosotros. 🤍`
   },
   // Semana 5
   {
     week: 5,
     title: "Un mes sin ti",
-    text: `Un mes.  
-Un mes viéndote crecer desde lejos.  
-Un mes extrañando tu voz.  
-Un mes aprendiendo a quererte en otra forma.
+    text: `Abi,
 
-Pero te prometo algo:
+Ya han pasado varios días desde que te fuiste, y en este punto el viaje empieza a sentirse distinto.
+Ya no es solo emoción ni expectativa… ahora es vida real.
+Días buenos, días difíciles, momentos que suman y otros que enseñan.
+Personas interesantes, otras no tanto.
+Y aun así, todo va bien. Porque tú estás bien, y eso es lo que importa.
 
-No importa cuántas semanas falten…  
-yo voy a seguir aquí, sintiéndote igual.
+Cada experiencia que vives, cada paso que das allá, me confirma algo que no deja de crecer en mí:
+te quiero más.
+Más con cada día, con cada silencio, con cada pensamiento que vuelve a ti sin pedir permiso.
+No sales de mi cabeza y, lejos de cansarme, eso solo me convence de que lo quiero todo contigo.
 
-Y cuando volvas, me vas a encontrar con los brazos abiertos, como si el tiempo nunca hubiera pasado.`
+Sé que todavía falta mucho camino.
+Que habrá días en los que la cabeza pese, en los que las dudas hablen fuerte, en los que el cansancio quiera ganar.
+Pero también sé que eres fuerte, que eres valiente y que todo este esfuerzo vale la pena.
+Así que seguimos.
+Con todo.
+Un día más y un día menos.
+
+Seguimos adelante, con la fe intacta y la frente en alto.
+Paso a paso, incluso cuando cueste.
+Yo estoy aquí, creyendo en ti, sosteniéndote desde la distancia,
+esperando el día en que todo esto se convierta en historias contadas frente a frente.
+
+Siempre tú.
+Siempre nosotros. 🤍`
   },
   // Semana 6
   {
