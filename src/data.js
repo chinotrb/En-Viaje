@@ -380,20 +380,10 @@ Quiero ser testigo de todos tus logros, de cada risa y de cada victoria que vien
 Brindo por un año lleno de abrazos reales, metas cumplidas y planes bonitos contigo.`
   },
   {
-    id: 'enero-14',
-    month: 1,
-    day: 14,
-    title: '14 de enero: solo te deseo a ti',
-    tag: 'Fecha especial',
-    text: `No necesito una excusa para recordarte que eres mi pensamiento favorito.
-Hoy, 14 de enero, solo quiero decirte que sigo aquí, orgulloso de ti y esperando cada nuevo capítulo a tu lado.
-Gracias por existir y por hacerme creer en nosotros.`
-  },
-  {
     id: 'plata',
     month: 1,
     day: 26,
-    title: 'Voy con todo',
+    title: 'Eres el unico apoyo que necesito 🥈',
     tag: '26 de enero',
     text: `Amor, hoy el mundo habla de flores y chocolates, pero mi detalle favorito sigue siendo tu existencia.
 Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
@@ -403,7 +393,7 @@ Que este 26 de enero nos recuerde que lo nuestro no necesita testigos para ser r
     id: 'Por-la-medalla',
     month: 1,
     day: 27,
-    title: 'Oro',
+    title: 'Bailemos 🏅',
     tag: '27 de enero',
     text: `Amor, hoy el mundo habla de flores y chocolates, pero mi detalle favorito sigue siendo tu existencia.
 Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
