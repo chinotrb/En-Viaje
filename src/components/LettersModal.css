@@ -46,7 +46,7 @@
   margin-top: 18px;
 }
 .letter-item {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
   background: var(--card-bg);
@@ -59,6 +59,16 @@
   font-size: 13px;
   color: #A9A9A9;
   margin-top: 2px;
+}
+.letter-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  margin-top: 4px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--accent-highlight);
 }
 .read-btn, .back-btn {
   background: var(--btn-gradient-a);

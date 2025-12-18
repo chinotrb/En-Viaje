@@ -12,6 +12,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 )
 
-registerSW({
-  immediate: true
-})
+// No registrar service worker en modo dev para evitar cachear la version de Vite
+if (import.meta.env.PROD) {
+  registerSW({
+    immediate: true
+  })
+}

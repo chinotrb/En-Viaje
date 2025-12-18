@@ -10,8 +10,9 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import PauseIcon from '@mui/icons-material/Pause'
 import FlightIcon from '@mui/icons-material/Flight'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import AcUnitIcon from '@mui/icons-material/AcUnit'
 
-export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShowFrases }) {
+export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShowFrases, onShowSpecial }) {
   const { daysLeft, currentPhrase, currentMotivational, currentLetter } = useMainData()
   const [showLetter, setShowLetter] = useState(false)
   const [playMusic, setPlayMusic] = useState(false)
@@ -70,6 +71,15 @@ export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShow
           {/* Boton carta semanal */}
           <Button variant="outlined" startIcon={<MailOutlineIcon />} className="unique-btn enter-up" onClick={() => setShowLetter(true)}>
             Read Weekly Letter
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<AcUnitIcon />}
+            className="unique-btn btn-special enter-up"
+            onClick={onShowSpecial}
+          >
+            Mensajes especiales
           </Button>
           {/* Botones de album y leer cartas en la misma fila */}
           <Box className="stagger" sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 1, justifyContent: 'center' }}>

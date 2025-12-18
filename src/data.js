@@ -336,3 +336,89 @@ Y eso me da fuerza.`
 // Fecha en que Abi se fue (cambiar esta fecha)
 export const departureDate = new Date("2025-11-24");  // lunes de esta semana
 export const returnDate = new Date("2026-03-30");     // fecha de regreso
+
+// Cartas/mensajes para fechas especiales (se mostraran el dia y quedaran guardadas)
+export const specialLetters = [
+  {
+    id: 'nochebuena',
+    month: 12,
+    day: 24,
+    title: 'Carta de Nochebuena',
+    tag: 'Navidad',
+    text: `Hoy es 24 y me gustaria estar a tu lado viendo las luces, escuchando villancicos y riendonos sin prisa.
+Aunque la distancia exista, quiero que sientas que sigo ahi, abrazandote fuerte y deseandote la noche mas bonita.
+Que esta Navidad te llene de calma, esperanza y sonrisas sinceras. Te quiero con cada lucecita que se enciende.`
+  },
+  {
+    id: 'navidad',
+    month: 12,
+    day: 25,
+    title: 'Feliz Navidad, vida mia',
+    tag: 'Navidad',
+    text: `Feliz 25. Ojala este mensaje te encuentre calentita, feliz y rodeada de amor.
+Gracias por darle sentido a cada detalle y por seguir siendo mi milagro favorito.
+Brindemos por nosotros, por lo que hemos vivido y por todo lo que aun viene.`
+  },
+  {
+    id: 'fin-ano',
+    month: 12,
+    day: 30,
+    title: 'Cerrando el año contigo en mente',
+    tag: 'Fin de año',
+    text: `Este año tuvo de todo, pero lo mejor siempre fue pensarte y saber que seguimos caminando juntos.
+Que lo que viene nos encuentre más fuertes, más tranquilos y más enamorados de la vida (y de nosotros).
+Gracias por ser mi parte favorita de cada capítulo.`
+  },
+  {
+    id: 'ano-nuevo',
+    month: 1,
+    day: 1,
+    title: 'Bienvenido, nuevo año',
+    tag: 'Año nuevo',
+    text: `Primer día del año y ya quiero escribirte. Deseo que este 1 de enero te recuerde que mereces lo mejor.
+Quiero ser testigo de todos tus logros, de cada risa y de cada victoria que viene.
+Brindo por un año lleno de abrazos reales, metas cumplidas y planes bonitos contigo.`
+  },
+  {
+    id: 'enero-14',
+    month: 1,
+    day: 14,
+    title: '14 de enero: solo te deseo a ti',
+    tag: 'Fecha especial',
+    text: `No necesito una excusa para recordarte que eres mi pensamiento favorito.
+Hoy, 14 de enero, solo quiero decirte que sigo aquí, orgulloso de ti y esperando cada nuevo capítulo a tu lado.
+Gracias por existir y por hacerme creer en nosotros.`
+  },
+  {
+    id: 'plata',
+    month: 1,
+    day: 26,
+    title: 'Voy con todo',
+    tag: '26 de enero',
+    text: `Amor, hoy el mundo habla de flores y chocolates, pero mi detalle favorito sigue siendo tu existencia.
+Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
+Que este 26 de enero nos recuerde que lo nuestro no necesita testigos para ser real y hermoso.`
+  },
+  {
+    id: 'Por-la-medalla',
+    month: 1,
+    day: 27,
+    title: 'Oro',
+    tag: '27 de enero',
+    text: `Amor, hoy el mundo habla de flores y chocolates, pero mi detalle favorito sigue siendo tu existencia.
+Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
+Que este 26 de enero nos recuerde que lo nuestro no necesita testigos para ser real y hermoso.`
+  },
+  {
+    id: 'san-valentin',
+    month: 2,
+    day: 14,
+    title: 'San Valentín esperando por ti',
+    tag: '14 de febrero',
+    text: `Amor, hoy el mundo habla de flores y chocolates, pero mi detalle favorito sigue siendo tu existencia.
+Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
+Que este San Valentín nos recuerde que lo nuestro no necesita testigos para ser real y hermoso.`
+  },
+  
+]
+

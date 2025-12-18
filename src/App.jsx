@@ -4,6 +4,7 @@ import Main from './pages/Main'
 import PhotoAlbum from './components/PhotoAlbum'
 import LettersModal from './components/LettersModal'
 import FrasesModal from './components/FrasesModal'
+import SpecialMessagesModal from './components/SpecialMessagesModal'
 import './main.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const [showAlbum, setShowAlbum] = useState(false)
   const [showLetters, setShowLetters] = useState(false)
   const [showFrases, setShowFrases] = useState(false)
+  const [showSpecial, setShowSpecial] = useState(false)
   const [theme, setTheme] = useState('cielo')
 
   useEffect(() => {
@@ -37,9 +39,11 @@ function App() {
     }
   }, [theme])
 
-  // Generar copos de nieve o burbujas según el tema
+  // Generar copos de nieve o burbujas segun el tema
   useEffect(() => {
-    const charSet = theme === 'oceano' ? ['○', '◦', '•'] : ['❄', '✻', '✼']
+    const charSet = theme === 'oceano'
+      ? ['o', '.', 'O']                     // burbujas
+      : ['*', '✻', '❄']                    // copos de nieve en modo viaje
     const flakes = Array.from({ length: 40 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -100,6 +104,11 @@ function App() {
           >{flake.char}</span>
         ))}
       </div>
+      <div className="snowy-hills" aria-hidden="true">
+        <div className="hill hill-left" />
+        <div className="hill hill-right" />
+        <div className="ski-track" />
+      </div>
       {isUnlocked ? (
         <Main
           theme={theme}
@@ -107,6 +116,7 @@ function App() {
           onShowAlbum={() => setShowAlbum(true)}
           onShowLetters={() => setShowLetters(true)}
           onShowFrases={() => setShowFrases(true)}
+          onShowSpecial={() => setShowSpecial(true)}
         />
       ) : <LockScreen onUnlock={unlock} />}
 
@@ -166,6 +176,9 @@ function App() {
       )}
       {showFrases && (
         <FrasesModal onClose={() => setShowFrases(false)} />
+      )}
+      {showSpecial && (
+        <SpecialMessagesModal onClose={() => setShowSpecial(false)} />
       )}
       {showInstall && isMobile && (
         <button
