@@ -46,7 +46,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --bg-gradient: linear-gradient(120deg, #d4a9e6 0%, #f7d9e7 60%, #e6a9b5 100%);
+  --bg-gradient: linear-gradient(120deg, #bfe6ff 0%, #f1c7dd 58%, #e6a2b8 100%);
   --overlay-glow: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.06), transparent 20%), linear-gradient(180deg, rgba(230, 169, 181, 0.03), transparent 50%);
   --title-color: #E6A9B5;
   --text-main: #333333;
@@ -72,7 +72,7 @@ body {
 
 /* Tema Cielo: mantiene la apariencia original rosada */
 body.theme-cielo {
-  --bg-gradient: linear-gradient(120deg, #d4a9e6 0%, #f7d9e7 60%, #e6a9b5 100%);
+  --bg-gradient: linear-gradient(120deg, #bfe6ff 0%, #f1c7dd 58%, #e6a2b8 100%);
   --overlay-glow: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.06), transparent 20%), linear-gradient(180deg, rgba(230, 169, 181, 0.03), transparent 50%);
   --title-color: #E6A9B5;
   --text-main: #333333;
@@ -107,3 +107,4 @@ body.theme-oceano {
   --btn-gradient-b: linear-gradient(90deg, #1fb0d0 0%, #77d2f3 100%);
   --surface-border: rgba(255, 255, 255, 0.15);
 }
+

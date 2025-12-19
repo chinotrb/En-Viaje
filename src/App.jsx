@@ -105,6 +105,36 @@ function App() {
         ))}
       </div>
       <div className="snowy-hills" aria-hidden="true">
+        <div className="mountains">
+          <div className="mountain m1" />
+          <div className="mountain m2" />
+          <div className="mountain m3" />
+        </div>
+        <div className="fog" />
+        <div className="tree-line">
+          <span className="tree t1" />
+          <span className="tree t2" />
+          <span className="tree t3" />
+          <span className="tree t4" />
+          <span className="tree t5" />
+          <span className="tree t6" />
+          <span className="tree t7" />
+          <span className="tree t8" />
+          <span className="tree t9" />
+          <span className="tree t10" />
+          <span className="tree t11" />
+          <span className="tree t12" />
+          <span className="tree t13" />
+          <span className="tree t14" />
+          <span className="tree t15" />
+          <span className="tree t16" />
+          <span className="tree t17" />
+          <span className="tree t18" />
+          <span className="tree t19" />
+          <span className="tree t20" />
+          <span className="tree t21" />
+          <span className="tree t22" />
+        </div>
         <div className="hill hill-left" />
         <div className="hill hill-right" />
         <div className="ski-track" />
@@ -207,3 +237,4 @@ function App() {
 }
 
 export default App
+
