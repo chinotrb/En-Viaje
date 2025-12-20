@@ -340,6 +340,105 @@ export const returnDate = new Date("2026-03-30");     // fecha de regreso
 // Cartas/mensajes para fechas especiales (se mostraran el dia y quedaran guardadas)
 export const specialLetters = [
   {
+    id: '100Dias',
+    month: 12,
+    day: 20,
+    title: '100 días',
+    tag: 'Solo 100',
+    text: `
+Hoy faltan 100 días para que vuelvas,
+y pensarlo todavía me pesa en el pecho.
+Sabía que te iba a extrañar, 
+claro que lo sabía eso estaba claro,
+pero no tenía idea de cuánto.
+
+No sabía que ibas a estar en mi mente todos los días,
+en cada momento tranquilo, bueno o difícil,
+en cada silencio, cada recuerdo o canción.
+en cada cosa pequeña que antes no notaba y ahora me recuerda a ti.
+
+No sabía que mi corazón se iba a acelerar solo por pensarte.
+No sabía que extrañar podía sentirse así,
+tan fuerte, tan constante, tan presente.
+No sabía que iba a sentir celos jaja..,
+yo no soy celoso... decia...
+ni que la inseguridad iba a aparecer de la nada,
+sin avisar, solo por no poder estar contigo.
+
+No sabía que iba a querer verte todo el tiempo,
+escucharte aunque sea unos segundos más,
+guardar tu voz como un tesoro.
+
+Es duro sentir todo esto de golpe.
+Es duro curiso querer a alguien y no poder ir donde está.
+Es duro saber que el abrazo que más necesito
+tiene que esperar.
+
+Hay días en los que la cabeza se llena de pensamientos,
+días en los que intento ser fuerte
+y otros en los que simplemente extraño,
+sin explicaciones, sin razones, solo extraño.
+
+Pero aun así, voy a esperar.
+Porque esperar por ti es lo que quiero.
+Mientras espero, quiero mejorar.
+Quiero crecer, cambiar lo que haga falta,
+aprender de mis errores,
+y convertirme en alguien mejor.
+
+Quiero ser lo mejor para ti.
+Lo mejor para mí.
+Lo mejor para nosotros.
+
+Porque tú eres la mejor.
+Eres increíble, de una manera unica.
+Das color a la vida y es el color mas hermoso que he visto.
+Eres esa persona que, incluso en la distancia,
+sigue siendo hogar.
+Eres lo que quiero en toda mi vida,
+sin dudas, sin medias intenciones, sin planes a medias.
+
+Hace unos días, en el trabajo,
+la gente chismosa.... como siempre, me preguntó
+si a mi edad alguna vez había sentido
+esa sensación de solo querer a una persona en la vida.
+
+Y les respondí que sí...
+Que solo a una.
+
+Les dije que, por idiota, la perdí.
+Pero que, a pesar de todo lo que ha pasado,
+a pesar del tiempo, los errores y las vueltas de la vida,
+sigue siendo solo ella.
+
+Que no hay nadie más con quien quiera todo.
+Que no hay nadie más con quien me imagine el futuro.
+Que no hay nadie más que me haga sentir así.
+Que no hay nadie mas con ese color unico que tiene ella.
+
+Me da miedo pensar que tal vez no sea el caso.
+Me da miedo no saber qué pasará cuando vuelvas.
+Me da miedo no ser suficiente.
+Me da miedo que perderte.
+
+Pero también sé que no quiero vivir preguntándome
+se lo que quiro y con quien lo quiero.
+y esto dispuesto a entregarlo todo.
+llame loco por que es lo que siento.
+
+Prefiero vivir con este miedo.
+Prefiero vivir con esta locura.
+Pero que sea una locura solo por ti
+y para ti.
+
+Porque, aunque falten 100 días,
+cada día que pasa es uno menos,
+y cada día que pasa
+te sigo eligiendo.
+sigo queriendo todo contigo.`
+
+  },
+  {
     id: 'nochebuena',
     month: 12,
     day: 24,
@@ -409,6 +508,6 @@ Que este 26 de enero nos recuerde que lo nuestro no necesita testigos para ser r
 Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
 Que este San Valentín nos recuerde que lo nuestro no necesita testigos para ser real y hermoso.`
   },
-  
+
 ]
 
