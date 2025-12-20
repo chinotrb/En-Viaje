@@ -281,34 +281,34 @@ Siempre nosotros. 🤍`
   // Semana 5
   {
     week: 5,
-    title: "Un mes sin ti",
-    text: `Abi,
+    title: "Una semana curiosa",
+    text: `Se siente extraño, no?
 
-Ya han pasado varios días desde que te fuiste, y en este punto el viaje empieza a sentirse distinto.
-Ya no es solo emoción ni expectativa… ahora es vida real.
-Días buenos, días difíciles, momentos que suman y otros que enseñan.
-Personas interesantes, otras no tanto.
-Y aun así, todo va bien. Porque tú estás bien, y eso es lo que importa.
+Esta semana se siente rara. No mala, no pesada, solo distinta.
+Es una de esas semanas en las que todo sigue avanzando, pero por dentro se percibe diferente.
+Cambian las rutinas, cambian las fechas, cambian las formas en las que se viven cosas que antes parecían normales.
 
-Cada experiencia que vives, cada paso que das allá, me confirma algo que no deja de crecer en mí:
-te quiero más.
-Más con cada día, con cada silencio, con cada pensamiento que vuelve a ti sin pedir permiso.
-No sales de mi cabeza y, lejos de cansarme, eso solo me convence de que lo quiero todo contigo.
+Estás lejos de casa, en un lugar que poco a poco se vuelve familiar.
+Estás aprendiendo, adaptándote, haciendo lo que toca hacer, incluso cuando no es sencillo.
+Y aun así sigues adelante, sigues levantándote cada día, sigues dando lo mejor de ti y construyendo algo que va más allá de esta semana.
 
-Sé que todavía falta mucho camino.
-Que habrá días en los que la cabeza pese, en los que las dudas hablen fuerte, en los que el cansancio quiera ganar.
-Pero también sé que eres fuerte, que eres valiente y que todo este esfuerzo vale la pena.
-Así que seguimos.
-Con todo.
-Un día más y un día menos.
+No todas las semanas son intensas ni llenas de emoción. 
+Algunas son importantes precisamente porque son tranquilas, 
+porque te enseñan a mantenerte firme y a recordar de lo que eres capaz. Esta es una de esas semanas.
 
-Seguimos adelante, con la fe intacta y la frente en alto.
-Paso a paso, incluso cuando cueste.
-Yo estoy aquí, creyendo en ti, sosteniéndote desde la distancia,
-esperando el día en que todo esto se convierta en historias contadas frente a frente.
+Puede que el ambiente se sienta distinto, todo cambia esta semana, nada es igual. 
+Pero eso no le quita valor a lo que estamos viviendo. Al contrario, nos está haciendo crecer y nos está preparando para todo lo que viene después.
 
-Siempre tú.
-Siempre nosotros. 🤍`
+Quiero que recuerdes que esto no es para siempre. Que esta etapa es solo una parte del camino. 
+Que lo que hoy se siente raro, mañana será solo una historia más que contar, una experiencia que sumó y que valió la pena.
+
+Sigue adelante. Confía en ti y en lo que estás construyendo. 
+Habrá muchas semanas más, muchos momentos compartidos y muchas experiencias que viviremos a nuestra manera, con calma y con ilusión.
+
+Aquí estoy yo, apoyándote incluso en la distancia, 
+creyendo en ti incluso cuando tú dudes un poco.
+
+Un día más… y un día menos.`
   },
   // Semana 6
   {
