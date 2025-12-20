@@ -284,31 +284,26 @@ Siempre nosotros. 🤍`
     title: "Una semana curiosa",
     text: `Se siente extraño, no?
 
-Esta semana se siente rara. No mala, no pesada, solo distinta.
-Es una de esas semanas en las que todo sigue avanzando, pero por dentro se percibe diferente.
-Cambian las rutinas, cambian las fechas, cambian las formas en las que se viven cosas que antes parecían normales.
+Esta semana se siente rara.
+Es la primera vez que se pasan estas fechas trabajando, lejos de la familia, y seguramente no será la última. 
+Es una sensación nueva, distinta, que no se parece a lo que siempre fue costumbre, y por eso se siente extraña.
 
-Estás lejos de casa, en un lugar que poco a poco se vuelve familiar.
-Estás aprendiendo, adaptándote, haciendo lo que toca hacer, incluso cuando no es sencillo.
-Y aun así sigues adelante, sigues levantándote cada día, sigues dando lo mejor de ti y construyendo algo que va más allá de esta semana.
+Es una semana que se vive a la distancia, lejos de casa, lejos de los nuestros.
+Una de esas semanas que no se esperaban, pero que forman parte del camino y de todo lo que estamos aprendiendo en esta etapa.
 
-No todas las semanas son intensas ni llenas de emoción. 
-Algunas son importantes precisamente porque son tranquilas, 
-porque te enseñan a mantenerte firme y a recordar de lo que eres capaz. Esta es una de esas semanas.
+Aun así, será una semana curiosa. Una semana más. Una en la que, a pesar de todo, seguiremos esforzándonos. 
+A pesar de la falta de ganas en algunos momentos o de la motivación que a veces baja, seguimos moviéndonos hacia adelante.
 
-Puede que el ambiente se sienta distinto, todo cambia esta semana, nada es igual. 
-Pero eso no le quita valor a lo que estamos viviendo. Al contrario, nos está haciendo crecer y nos está preparando para todo lo que viene después.
+No sé exactamente cómo te sientes o cómo estés viviendo estos días, pero quiero que recuerdes que esta es solo una más de muchas Navidades que vendrán. 
+Muchas que serán a tu gusto, donde podrás hacer lo que quieras y cuando quieras, con la libertad de haber pasado por momentos como este.
 
-Quiero que recuerdes que esto no es para siempre. Que esta etapa es solo una parte del camino. 
-Que lo que hoy se siente raro, mañana será solo una historia más que contar, una experiencia que sumó y que valió la pena.
+Es una semana más de aventura.
+Una semana que suma, que deja experiencia y que un día se recordará con calma.
 
-Sigue adelante. Confía en ti y en lo que estás construyendo. 
-Habrá muchas semanas más, muchos momentos compartidos y muchas experiencias que viviremos a nuestra manera, con calma y con ilusión.
+Y antes de terminar, solo quiero que lo sepas: eres increíble, fuerte y valiente.
+Deseo de corazón que todo te salga bien, para ti y para los panas. 
+Te admiro mucho y estoy orgulloso de ti.`
 
-Aquí estoy yo, apoyándote incluso en la distancia, 
-creyendo en ti incluso cuando tú dudes un poco.
-
-Un día más… y un día menos.`
   },
   // Semana 6
   {
@@ -444,9 +439,24 @@ sigo queriendo todo contigo.`
     day: 24,
     title: 'Carta de Nochebuena',
     tag: 'Navidad',
-    text: `Hoy es 24 y me gustaria estar a tu lado viendo las luces, escuchando villancicos y riendonos sin prisa.
-Aunque la distancia exista, quiero que sientas que sigo ahi, abrazandote fuerte y deseandote la noche mas bonita.
-Que esta Navidad te llene de calma, esperanza y sonrisas sinceras. Te quiero con cada lucecita que se enciende.`
+    text: `
+Hoy quiero desearte un día bonito, de esos que se sienten tranquilos y ligeros o por los menos bien.
+Que el trabajo se pase rápido, que el ambiente sea agradable y que encuentres pequeños momentos que te hagan sentir bien durante el día.
+
+Esta noche, aunque yo esté trabajando, mi pensamiento está contigo. 
+Me gusta imaginar que algún día podré pasar una Nochebuena a tu lado, compartiendo cosas simples, de esas que se disfrutan más cuando se hacen juntos.
+
+Me imagino cocinando contigo, preparando algo sencillo o algo especial, riéndonos si algo no sale perfecto.
+Me imagino viendo películas, envueltos en cobijas, eligiendo una y luego otra, sin importar tanto cuál, sino el hecho de estar ahí, juntos. 
+Me imagino saliendo solo nosotros, caminando sin prisa, conversando de todo y de nada, disfrutando el momento.
+
+Pensar en todo eso me llena de calma y de ilusión....
+
+Que esta noche te trate bien. Que sea una noche serena, con buena energía y momentos agradables. Que te sientas acompañada, cuidada y en paz.
+
+Te deseo un día bonito y una Nochebuena tranquila.
+Aquí estoy, pensándote con cariño y con la esperanza de que algún día todo eso que imagino se vuelva realidad.
+feliz Nochebuena y feliz Navidad.`
   },
   {
     id: 'navidad',
@@ -454,9 +464,33 @@ Que esta Navidad te llene de calma, esperanza y sonrisas sinceras. Te quiero con
     day: 25,
     title: 'Feliz Navidad, vida mia',
     tag: 'Navidad',
-    text: `Feliz 25. Ojala este mensaje te encuentre calentita, feliz y rodeada de amor.
-Gracias por darle sentido a cada detalle y por seguir siendo mi milagro favorito.
-Brindemos por nosotros, por lo que hemos vivido y por todo lo que aun viene.`
+    text: `
+🎄✨ FELIZ NAVIDAAAAAAAAAAAD ✨🎄
+
+Mi niña hermosa 💖
+preciosa 🌸
+divina ✨
+única 💫
+princesa 👑
+reina 👑💛
+maravillosa 🌟
+increíble 💕
+espectacular 😍
+y todo lo bonito que existe en este mundo 💝
+
+Hoy solo quiero desearte una feliz Navidad 🎄, de esas que se disfrutan a pesar de todo, aunque el día no sea perfecto. 
+Que encuentres momentos lindos, risas inesperadas y pequeñas cosas que hagan que el día valga la pena 💛.
+
+Deseo que hoy puedas disfrutar lo que venga, que te sientas bien 💕, tranquila y acompañada 🤍. 
+Que comas rico, que el ambiente sea agradable✨ y que el día te trate con cariño, porque tú te lo mereces 🌷.
+
+Y quiero que sepas algo muy simple y muy sincero 💖: para mí, con tal de que tú estés bien, yo estoy bien 🤍.
+Así de fácil. Tu tranquilidad, tu sonrisa y tu bienestar son más que suficientes para mí 💞.
+
+Hoy te pienso con mucho amor 💖, con ilusión ✨ y con la certeza de que vendrán muchas Navidades más 🎄💫.
+
+Disfruta este día, mi princesa hermosa 👑💛
+Te quiero muchísimo 💖💫`
   },
   {
     id: 'fin-ano',
