@@ -308,17 +308,60 @@ Te admiro mucho y estoy orgulloso de ti.`
   // Semana 6
   {
     week: 6,
-    title: "Semana 5: Todavía sos mi pensamiento favorito",
-    text: `Hay días en los que te extraño más.  
-Y otros en los que te extraño muchísimo más.
+    title: " Un mes después, un año por delante",
+    text: `
+Esta semana no es una más.
+Esta semana marca cosas importantes.
 
-Pero todos los días te pienso con cariño.
+Empieza un año nuevo,
+y sin darnos cuenta… ya pasó el primer mes.
 
-Me hace ilusión imaginar cómo vas a volver, cómo será ese abrazo, cómo va a sentirse verte después de tanto.
+Treinta días llenos de experiencias, aprendizajes, momentos buenos y otros no tan fáciles.
+Treinta días en los que el tiempo avanzó más rápido de lo que imaginábamos.
+Treinta días donde, pase lo que pase, tú siempre estuviste en mi mente,
+siendo mi primer pensamiento del día y el último.
 
-Falta, sí…  
-pero cada semana es una menos.  
-Y eso me da fuerza.`
+Dicen que el inicio del año trae cambios, retos y movimiento…
+empieza esa etapa donde todo va más rápido, donde se exige más,
+pero donde también se crece más.
+
+Pero no te preocupes.
+Confía en ti, como yo confío en ti.
+Confía en tu fuerza, en tu capacidad, en todo lo que eres
+y en todo lo que puedes hacer.
+
+Sé que no siempre será sencillo,
+pero también sé que estás hecha para esto y para mucho más.
+Recuerda siempre: “it’s just the beginning”.
+estos son solo los primeros pasos de tu camino.
+lo haces bien y lo seguirás haciendo.
+por que eres fuerte, valiente y capaz de todo lo que te propongas.
+sabes que es veredad y nunca lo olvides( NO dejare que lo olvides jamas )
+
+Este primer mes lejos, incluso con menos contacto,
+me confirmó cuánto te quiero, cuánto te adoro
+y que eres lo que anhelo en mi vida.
+Me recordó cuánto valen cada uno de estos días.
+
+Que este nuevo año te reciba con oportunidades,
+con aprendizajes bonitos,
+y con la certeza de que, aunque estés lejos,
+hay alguien aquí que cree en ti
+con todo el corazón y con toda el alma.
+
+Un día más, un día menos.
+Seguimos avanzando.
+Con calma, con fe… y con la frente en alto.
+
+Feliz año nuevo, mi niña hermosa, princesa de mi vida, reina de mi alma 🤍
+Espero que algún día podamos compartirlo juntos.
+
+Estoy muy orgulloso de ti.
+
+Aquí estaré esperando tu regreso…
+tal vez con unos 20 ramos de flores 🌸🌸🌸
+…o mas...
+`
   },
   // Semana 7
   {
