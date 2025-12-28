@@ -539,11 +539,98 @@ Te quiero muchísimo 💖💫`
     id: 'fin-ano',
     month: 12,
     day: 30,
-    title: 'Cerrando el año contigo en mente',
+    title: 'Carta de Fin de Año — Todo lo que fue, todo lo que viene',
     tag: 'Fin de año',
-    text: `Este año tuvo de todo, pero lo mejor siempre fue pensarte y saber que seguimos caminando juntos.
-Que lo que viene nos encuentre más fuertes, más tranquilos y más enamorados de la vida (y de nosotros).
-Gracias por ser mi parte favorita de cada capítulo.`
+    text: `
+Este año fue especial.
+No perfecto, no sencillo… pero profundamente importante.
+
+Desde febrero, después de todo, volvimos a hablar.
+Cada uno venía de su propio camino,
+de sus propias experiencias, aprendizajes y silencios.
+Tú viviste muchas cosas por tu cuenta,
+y yo también aprendí a mi manera...
+
+Poco a poco, empezamos a acercarnos de nuevo.
+A hablar más, a compartir más,
+como si nunca nos hubiéramos alejado...
+hasta que llegó ese momento tan bonito
+de volver a vernos, de pasar tiempo juntos otra vez.
+poder ver los ojos, escuchar la voz, sentir el abrazo mas hermoso del mundo.
+
+Y fue increíble.
+Volver a compartir contigo,
+volver a reír, a disfrutar,
+a sentir esa felicidad real, tranquila y sincera que me das.
+ver el color que solo tu le das a mi vida.
+Esos momentos magicos que solo entre nosotros vivimos.
+las palomas blancas, las risas, las miradas, los besos, los abrazos.
+esas cosas que solo son tuyas y mias.
+
+Para mí, tú eres lo más bonito que puede existir en esta vida.
+Y lo que yo quiero en todos los años por venir.
+espero me des la oportunidad de demostrartelo cada dia.
+con cada detalle, con cada gesto,
+demostrate lo tan importante que eres para mi. 
+que no hay nada mas bonito que verte feliz.
+que no hay nada mas bonito que hacerte sonreir.
+que no hay nada mas bonito que estar a tu lado.
+que no hay nada mas bonito que amarte.
+solo eso quiero.
+Eso es lo que siento, con el corazón en la mano entregándotelo.....
+Espera.... es cierto que ya te pertenecia desde siempre.
+desde el primer dia que te vi, desde el primer momento en que te hable.
+y seguro incluso antes de eso....
+
+Pero este año no habla solo de nosotros.
+Habla de ti.
+
+Fue un año en el que te esforzaste como pocas veces.
+Un año donde luchaste por una meta clara,
+donde trabajaste duro para conseguir esa oportunidad
+de ir a trabajar y vivir la experiencia en los estados.
+
+Lo hiciste por tu cuenta.
+a pesasr de las dudas,
+a pesar de los miedos,
+a pesar de todo lo que pudo haber salido mal. 
+lo hiciste.
+lo lograste.
+Mientras tenias todo lo de la u encima,
+mientras asumías responsabilidades.
+
+Cumpliste ese objetivo.
+
+Ahora estás allá, viviendo el resultado de todo ese esfuerzo.
+Vas a cerrar el año lejos de casa,
+y comenzar el nuevo también allá,
+rodeada de experiencias nuevas, aventuras, retos
+y momentos que te van a marcar.
+
+Todo eso es mérito tuyo.
+Todo eso habla de la mujer fuerte, capaz y admirable que eres.
+
+puede que no sea fácil.
+Puede que haya días complicados otros pesados,
+momentos de dudas.
+Pero también sé que eres más fuerte que todo eso.
+que tienes la capacidad de salir adelante.
+Esto solo es un paso , no es nada para ti.
+confia en lo que haces y como lo haces.
+
+Este año termina,
+pero deja algo muy claro:
+tú puedes con esto y con mucho más.
+tu eres capaz de todo lo que te propongas.
+
+Y yo, desde aquí,
+cierro el año orgulloso de ti,
+agradecido por haberte vuelto a encontrar,
+y con el corazón lleno de ilusión por todo lo que viene.
+
+Feliz fin de año, Abi 🤍
+Que el próximo te reciba con la misma fuerza
+`
   },
   {
     id: 'ano-nuevo',
