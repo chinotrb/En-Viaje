@@ -25,13 +25,22 @@ const today = () => {
   return new Date(now.getFullYear(), now.getMonth(), now.getDate())
 }
 
+const systemToday = () => {
+  const now = new Date()
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate())
+}
+
+const isYearMatch = (entry, date) => !entry.year || entry.year === date.getFullYear()
+
 const isToday = (entry) => {
   const now = today()
+  if (!isYearMatch(entry, systemToday())) return false
   return now.getMonth() === entry.month - 1 && now.getDate() === entry.day
 }
 
 const daysUntil = (entry) => {
   const base = today()
+  if (!isYearMatch(entry, systemToday())) return Infinity
   const thisYear = new Date(base.getFullYear(), entry.month - 1, entry.day)
   const target = thisYear >= base ? thisYear : new Date(base.getFullYear() + 1, entry.month - 1, entry.day)
   return Math.ceil((target - base) / (1000 * 60 * 60 * 24))
@@ -43,6 +52,7 @@ export default function SpecialMessagesModal({ onClose }) {
   const [seleccionada, setSeleccionada] = useState(null)
   const mensajesHoy = specialLetters.filter(isToday)
   const proximos = specialLetters
+    .filter(item => isYearMatch(item, systemToday()))
     .map(item => ({ ...item, dias: daysUntil(item) }))
     .sort((a, b) => a.dias - b.dias)
 
@@ -93,6 +103,16 @@ export default function SpecialMessagesModal({ onClose }) {
             <span className="letter-date">Hoy · {formatFecha(seleccionada)}</span>
             {seleccionada.tag && <span className="letter-tag">{seleccionada.tag}</span>}
             <pre style={{whiteSpace:'pre-wrap', textAlign:'left', marginTop:12}}>{seleccionada.text}</pre>
+            {seleccionada.song && (
+              <a
+                className="song-link"
+                href={seleccionada.song.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Escuchar: {seleccionada.song.title}
+              </a>
+            )}
             <button className="back-btn unique-btn" onClick={() => setSeleccionada(null)}>&larr; Volver</button>
           </div>
         )}

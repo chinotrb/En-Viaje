@@ -480,6 +480,7 @@ sigo queriendo todo contigo.`
     id: 'nochebuena',
     month: 12,
     day: 24,
+    year: 2025,
     title: 'Carta de Nochebuena',
     tag: 'Navidad',
     text: `
@@ -505,6 +506,7 @@ feliz Nochebuena y feliz Navidad.`
     id: 'navidad',
     month: 12,
     day: 25,
+    year: 2025,
     title: 'Feliz Navidad, vida mia',
     tag: 'Navidad',
     text: `
@@ -538,7 +540,7 @@ Te quiero muchísimo 💖💫`
   {
     id: 'fin-ano',
     month: 12,
-    day: 30,
+    day: 31,
     title: 'Carta de Fin de Año — Todo lo que fue, todo lo que viene',
     tag: 'Fin de año',
     text: `
@@ -585,8 +587,8 @@ y seguro incluso antes de eso....
 Pero este año no habla solo de nosotros.
 Habla de ti.
 
-Fue un año en el que te esforzaste como pocas veces.
-Un año donde luchaste por una meta clara,
+Fue un año en el que te esforzaste de muchas maneras.
+Un año donde luchaste por mas de una meta.
 donde trabajaste duro para conseguir esa oportunidad
 de ir a trabajar y vivir la experiencia en los estados.
 
@@ -612,7 +614,7 @@ Todo eso habla de la mujer fuerte, capaz y admirable que eres.
 
 puede que no sea fácil.
 Puede que haya días complicados otros pesados,
-momentos de dudas.
+momentos de dudas y llantos.
 Pero también sé que eres más fuerte que todo eso.
 que tienes la capacidad de salir adelante.
 Esto solo es un paso , no es nada para ti.
@@ -628,19 +630,97 @@ cierro el año orgulloso de ti,
 agradecido por haberte vuelto a encontrar,
 y con el corazón lleno de ilusión por todo lo que viene.
 
-Feliz fin de año, Abi 🤍
-Que el próximo te reciba con la misma fuerza
+Feliz fin de año, Abi hermosa🤍
+Que el próximo año nos traiga más momentos especiales,
+más risas, más abrazos y más momentos magicos.
+Te quiero con todo mi corazón.
+con todo mi ser.
+con todo lo que soy.
 `
   },
   {
     id: 'ano-nuevo',
     month: 1,
+    song: {
+      title: 'Contigo 2026',
+      url: 'https://open.spotify.com/intl-es/track/1x57piY4gMV0gFMk1sLb8A?si=fe19c76a88a1473c'
+    },
     day: 1,
-    title: 'Bienvenido, nuevo año',
+    title: 'Mi felicidad esta contigo en este nuevo año',
     tag: 'Año nuevo',
-    text: `Primer día del año y ya quiero escribirte. Deseo que este 1 de enero te recuerde que mereces lo mejor.
-Quiero ser testigo de todos tus logros, de cada risa y de cada victoria que viene.
-Brindo por un año lleno de abrazos reales, metas cumplidas y planes bonitos contigo.`
+    text: `
+Hoy empieza un año nuevo.
+Y antes de pensar en planes, promesas o cosas grandes,
+solo quiero empezar diciendo algo simple y sincero:
+
+Deseo que este año te trate bien.
+Que la vida sea amable contigo.
+Que todo lo que hagas y te propongas salga de la mejor manera posible.
+Que encuentres oportunidades,
+que aprendas cosas nuevas,
+que vivas experiencias bonitas.
+que cada paso que des te acerque a lo que sueñas
+y que cada esfuerzo valga la pena.
+
+Sé que este año llega lleno de experiencias nuevas.
+Nuevos retos, nuevos aprendizajes,
+momentos que te van a exigir
+y otros que te van a sorprender.
+Confío en que podrás con todo eso,
+porque siempre has sido fuerte, valiente
+y capaz incluso cuando dudas.
+
+Quiero que este año puedas cumplir
+todo lo que te propongas y si no no pasa nada.
+sigue adelante, esforzandote, lo estas haciendo bien.
+Que las cosas salgan de la mejor manera posible,
+que encuentres oportunidades,
+que aprendas, que crezcas
+y que te sientas orgullosa de ti.
+
+Yo, desde aquí, siempre te pienso.
+no importa el dia, el lugar o la hora.
+Eres mi pensamiento constante,
+No sé si a veces es más de lo que debería,
+pero es lo que me pasa.
+Eres la persona que adoro,
+admiro, respeto y quiero con todo mi corazón.
+y cuando pienso en el futuro,
+lo primero que deseo
+es que estés bien.
+
+Claro que me ilusiona compartir más contigo.
+Claro que deseo momentos a tu lado,
+claro que deseo más experiencias juntos,
+
+recuerdos que no pueda borrar.
+Pero por encima de todo eso,
+lo que más quiero
+es que tú estés bien
+y que la vida te sonría
+y te regale esos colores preciosos que tanto mereces.
+
+Siempre te digo algo que hoy cobra más sentido que nunca:
+Si tú estás bien yo estoy bien, todo está bien.
+Y lo digo porque creo en eso de verdad.
+
+Que este año te regale calma cuando la necesites,
+fuerza cuando haga falta,
+y alegría en los momentos simples.
+Que te permita vivir nuevas aventuras
+y guardar recuerdos bonitos
+que algún día recordarás con una sonrisa.
+
+Te deseo lo mejor, Abi.
+Siempre.
+Porque te quiero,
+porque te admiro,
+y porque quiero que la vida
+te dé todo lo bueno que mereces.
+
+Feliz Año Nuevo 🤍
+Que este 2026 sea un buen año para ti.
+`
   },
   {
     id: 'plata',

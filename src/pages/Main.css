@@ -241,6 +241,17 @@
     padding: 12px 0;
 }
 
+.header-cycle {
+    display: inline-block;
+    animation: headerSwap 0.6s ease both;
+}
+
+@keyframes headerSwap {
+    0% { opacity: 0; transform: translateY(6px) scale(0.98); }
+    60% { opacity: 1; transform: translateY(0) scale(1.02); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 .christmas-lights {
     position: fixed;
     top: 64px;

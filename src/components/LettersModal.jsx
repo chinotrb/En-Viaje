@@ -34,6 +34,15 @@ function getToday() {
   return new Date(base.getFullYear(), base.getMonth(), base.getDate())
 }
 
+function getSystemToday() {
+  const now = new Date()
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate())
+}
+
+function isYearMatch(special, date) {
+  return !special.year || special.year === date.getFullYear()
+}
+
 function getCartasDisponibles() {
   const hoy = new Date()
   const msPorSemana = 7 * 24 * 60 * 60 * 1000
@@ -46,6 +55,7 @@ function getCartasDisponibles() {
 // Devuelve true si la fecha especial ya ocurrio este aAño (o es hoy)
 function hasSpecialDateReleased(special) {
   const hoy = getToday()
+  if (!isYearMatch(special, getSystemToday())) return false
   const inicio = fechaInicioViaje
   const eventoEsteAno = new Date(hoy.getFullYear(), special.month - 1, special.day)
   const eventoAnterior = new Date(hoy.getFullYear() - 1, special.month - 1, special.day)
@@ -100,6 +110,16 @@ export default function LettersModal({ onClose }) {
             <span className="letter-date">{formatLabel(cartaSeleccionada)}</span>
             {cartaSeleccionada.tag && <span className="letter-tag">{cartaSeleccionada.tag}</span>}
             <pre style={{whiteSpace:'pre-wrap',textAlign:'left',marginTop:12}}>{cartaSeleccionada.text}</pre>
+            {cartaSeleccionada.song && (
+              <a
+                className="song-link"
+                href={cartaSeleccionada.song.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Escuchar: {cartaSeleccionada.song.title}
+              </a>
+            )}
             <button className="back-btn unique-btn" onClick={() => setCartaSeleccionada(null)}>&larr; Volver</button>
           </div>
         )}

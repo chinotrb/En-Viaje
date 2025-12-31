@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import AnimatedBackground from '../components/AnimatedBackground'
 import CartaSemanal from '../components/CartaSemanal'
 import { Button, Box, Typography, Card, CardContent } from '@mui/material'
@@ -18,8 +18,38 @@ export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShow
   const [playMusic, setPlayMusic] = useState(false)
   const [currentSong, setCurrentSong] = useState(0)
   const audioRef = useRef(null)
+  const headerMessages = ['A.L.L', '14643', 'chu']
+  const [headerText, setHeaderText] = useState(headerMessages[0])
+  const [headerCycle, setHeaderCycle] = useState(0)
 
   const songs = ['/music/TheRed-Nosed.mp3', '/music/ChristmasTree.mp3']
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeaderText((prev) => {
+        let next = prev
+
+        if (prev !== 'A.L.L') {
+          next = 'A.L.L'
+        } else {
+          const roll = Math.random()
+          if (roll < 0.15) {
+            next = '14643'
+          } else if (roll < 0.3) {
+            next = 'chu'
+          }
+        }
+
+        if (next !== prev) {
+          setHeaderCycle((value) => value + 1)
+        }
+
+        return next
+      })
+    }, 3500)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="page-container fade-in">
@@ -28,7 +58,9 @@ export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShow
       <div className="overlay"></div>
 
       <header className="header-fixed enter-up">
-        <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: 'var(--title-color)', letterSpacing: 2 }}>A.L.L <span role="img" aria-label="corazon"></span></Typography>
+        <Typography sx={{ textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '2.2rem', color: 'var(--title-color)', letterSpacing: 2 }}>
+          <span key={headerCycle} className="header-cycle">{headerText}</span> <span role="img" aria-label="corazon"></span>
+        </Typography>
       </header>
 
       <Box className="stagger" sx={{ zIndex: 2, width: '100%', maxWidth: 480, textAlign: 'center', mt: 10 }}>
