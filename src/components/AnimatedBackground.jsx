@@ -1,7 +1,6 @@
 import React from 'react'
 import avionImg from '../assets/avion.png'
 import avionImgIzq from '../assets/avion_izquierda.png'
-import santaImg from '../assets/santa_volando.png'
 import tiburon1 from '../assets/tiburon1.png'
 import tiburon2 from '../assets/tiburon2.png'
 import tiburon3 from '../assets/tiburon3.png'
@@ -44,7 +43,6 @@ export default function AnimatedBackground({ theme = 'cielo' }) {
         />
       ))}
 
-      {!isOcean && <img src={santaImg} alt="santa volando" className="santa" />}
     </div>
   )
 }

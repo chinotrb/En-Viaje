@@ -11,6 +11,9 @@ import PauseIcon from '@mui/icons-material/Pause'
 import FlightIcon from '@mui/icons-material/Flight'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
 import AcUnitIcon from '@mui/icons-material/AcUnit'
+import EmotionalPopup from '../components/EmotionalPopup'
+import EmotionalStoryModal from '../components/EmotionalStoryModal'
+import EmotionalNoModal from '../components/EmotionalNoModal'
 
 export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShowFrases, onShowSpecial }) {
   const { daysLeft, currentPhrase, currentMotivational, currentLetter } = useMainData()
@@ -21,8 +24,12 @@ export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShow
   const headerMessages = ['A.L.L', '14643', 'chu']
   const [headerText, setHeaderText] = useState(headerMessages[0])
   const [headerCycle, setHeaderCycle] = useState(0)
+  const [showEmotionalPopup, setShowEmotionalPopup] = useState(false)
+  const [showEmotionalStory, setShowEmotionalStory] = useState(false)
+  const [showEmotionalNo, setShowEmotionalNo] = useState(false)
 
   const songs = ['/music/TheRed-Nosed.mp3', '/music/ChristmasTree.mp3']
+  const emotionalPopupKey = 'eviaje_emotional_popup_seen'
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,6 +57,38 @@ export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShow
 
     return () => clearInterval(interval)
   }, [])
+
+  useEffect(() => {
+    let hasSeenPopup = false
+    try {
+      hasSeenPopup = localStorage.getItem(emotionalPopupKey) === 'true'
+    } catch {
+      hasSeenPopup = false
+    }
+
+    if (!hasSeenPopup) {
+      setShowEmotionalPopup(true)
+    }
+  }, [emotionalPopupKey])
+
+  const closeEmotionalPopup = () => {
+    setShowEmotionalPopup(false)
+    try {
+      localStorage.setItem(emotionalPopupKey, 'true')
+    } catch {
+      // Ignore storage errors to avoid blocking the UI.
+    }
+  }
+
+  const handleEmotionalYes = () => {
+    closeEmotionalPopup()
+    setShowEmotionalStory(true)
+  }
+
+  const handleEmotionalNo = () => {
+    closeEmotionalPopup()
+    setShowEmotionalNo(true)
+  }
 
   return (
     <div className="page-container fade-in">
@@ -103,6 +142,13 @@ export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShow
           {/* Boton carta semanal */}
           <Button variant="outlined" startIcon={<MailOutlineIcon />} className="unique-btn enter-up" onClick={() => setShowLetter(true)}>
             Read Weekly Letter
+          </Button>
+          <Button
+            variant="outlined"
+            className="unique-btn emotional-trigger enter-up"
+            onClick={() => setShowEmotionalStory(true)}
+          >
+            What you are to me
           </Button>
           <Button
             variant="contained"
@@ -189,6 +235,15 @@ export default function Home({ theme, onLock, onShowAlbum, onShowLetters, onShow
             </Typography>
           </CartaSemanal>
         )}
+
+        <EmotionalPopup
+          open={showEmotionalPopup}
+          onClose={closeEmotionalPopup}
+          onYes={handleEmotionalYes}
+          onNo={handleEmotionalNo}
+        />
+        <EmotionalStoryModal open={showEmotionalStory} onClose={() => setShowEmotionalStory(false)} />
+        <EmotionalNoModal open={showEmotionalNo} onClose={() => setShowEmotionalNo(false)} />
       </Box>
     </div>
   )

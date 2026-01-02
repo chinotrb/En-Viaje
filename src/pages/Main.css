@@ -390,3 +390,156 @@
 /* Slightly scale popup content on entry */
 .popup-enter { animation: popupIn .5s cubic-bezier(.2,.9,.2,1) both; }
 @keyframes popupIn { 0% { opacity: 0; transform: scale(.98) translateY(6px); } 100% { opacity:1; transform: scale(1) translateY(0); } }
+
+/* Emotional modal */
+.emotional-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: linear-gradient(180deg, rgba(12, 18, 26, 0.2), rgba(12, 18, 26, 0.45)), var(--overlay-glow);
+    backdrop-filter: blur(4px);
+}
+
+.emotional-modal {
+    width: min(92vw, 560px);
+    background: var(--card-bg);
+    border-radius: 18px;
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--card-shadow);
+    padding: 28px 26px;
+    color: var(--text-main);
+}
+
+.emotional-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--text-strong);
+    margin: 0 0 12px 0;
+}
+
+.emotional-intro {
+    white-space: pre-line;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.emotional-question {
+    margin: 16px 0 0;
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.emotional-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.emotional-trigger,
+.emotional-action {
+    border: none !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+.emotional-trigger {
+    background: var(--btn-gradient-a) !important;
+}
+
+.emotional-action-no {
+    background: var(--btn-gradient-a) !important;
+}
+
+.emotional-action-yes {
+    background: var(--btn-gradient-b) !important;
+}
+
+.emotional-story {
+    width: min(94vw, 640px);
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.emotional-story-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.emotional-story-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.emotional-audio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid var(--surface-border);
+}
+
+.emotional-audio audio {
+    width: 100%;
+}
+
+.emotional-audio-line {
+    height: 2px;
+    width: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, var(--accent-highlight), transparent);
+    opacity: 0.6;
+}
+
+.emotional-line {
+    margin: 0;
+    opacity: 0;
+    transform: translateY(6px);
+    animation: emotionalReveal .7s ease forwards;
+}
+
+.emotional-transcription {
+    margin-top: 6px;
+}
+
+.emotional-media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.emotional-media img {
+    width: min(160px, 42vw);
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(30, 34, 40, 0.18);
+    object-fit: cover;
+}
+
+@keyframes emotionalReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .emotional-line {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
