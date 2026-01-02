@@ -11,6 +11,8 @@ const mediaItems = [
 export default function EmotionalStoryModal({ open, onClose }) {
   if (!open) return null
 
+  const audioSrc = `${import.meta.env.BASE_URL}music/carta1.mp4`
+
   return (
     <div className="emotional-modal-overlay" role="dialog" aria-modal="true">
       <div className="emotional-modal emotional-story popup-enter">
@@ -20,7 +22,7 @@ export default function EmotionalStoryModal({ open, onClose }) {
         </div>
         <div className="emotional-story-body">
           <div className="emotional-audio">
-            <audio controls preload="metadata" src="/music/carta1.mp4">
+            <audio controls preload="metadata" src={audioSrc}>
               Your browser does not support the audio element.
             </audio>
             <div className="emotional-audio-line" aria-hidden="true" />
