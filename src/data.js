@@ -366,8 +366,57 @@ tal vez con unos 20 ramos de flores 🌸🌸🌸
   // Semana 7
   {
     week: 7,
-    title: "Semana 7: Todavía sos mi pensamiento favorito",
-    text: `Hay días en los que te extraño más.  `
+    title: "una a?",
+    text: `
+Empezamos el año.
+Primera semana del 2026.
+
+Pasaron Navidad y Año Nuevo…
+y aunque el mundo celebraba, para mí no se sintió como tal.
+No fue tristeza, no la pase mal, pero no fue especial.
+Esa sensación de que las fechas pasan, pero el corazón sigue esperando el mismo abrazo, la misma voz, la misma mirada.
+te extraño tanto....
+pero estoy contento por lo que puedes vivir y por que se que te esfuezas mucho alla.
+
+Hoy no pido grandes cosas.
+Solo que el tiempo pase.
+Que pase lo suficiente para volver a verte,
+para escucharte con calma,
+para tenerte cerca otra vez.
+una tarde tranquila 
+tu con tu limon y hierba buena y vientode mientras te doy las flores.
+
+Te extraño.
+Te extraño tanto pero tanto,
+y es raro que eso me haga feliz , poder extra;arte.
+Porque sé que este sentimiento es prueba de lo mucho que te quiero,
+de lo importante que eres para mí,
+y de tengo la oportunidad de esperarte.
+un pensamiento que acompaña todos los días.
+
+Este es un año nuevo,
+y sé que tienes mucho por vivir, mucho por lograr, mucho por conquistar.
+Mi mayor deseo es verte triunfar, verte crecer, verte cumplir todo lo que te propongas.
+Si eso pasa, yo estoy bien.
+
+Y quizás suene loco o sea loco,
+pero recuerdo que si estoy loco 
+tu me vuelves loco
+y eso me hace bien.
+estoy loco por ti 
+pero hay cosas que ya se quedaron conmigo.
+Tal vez la “A” de tu nombre ahora vive en mi piel.....
+quien sabe
+como el inicio de este año y de todo lo que aún falta por vivir.
+toca esperar a averiguarlo.
+
+Un día más,
+un día menos.
+Y yo sigo aquí,
+pensándote,
+esperándote,
+con el mismo deseo de siempre:
+volverte a ver mi corazon. `
   }
 
 ]
