@@ -417,6 +417,55 @@ pensándote,
 esperándote,
 con el mismo deseo de siempre:
 volverte a ver mi corazon. `
+  },
+   // Semana 8
+  {
+    week: 8,
+    title: "A prepararnos juntos para lo que viene",
+    text: `
+Semana ocho.
+A veces no parece mucho, otras veces se siente como si el tiempo no avanzara.
+y te he extrañado tanto tanto tanto como no tienes idea.
+
+Faltan menos de 79 dias a este punto.
+Y no lo digo con ansiedad, lo digo con propósito.
+ya vas por gran parte de tu camino, y has logrado cosas increíbles.
+Has demostrado una fuerza y una capacidad que me llenan de orgullo,
+y sigues avanzando, paso a paso, hacia todo lo que quieres....
+
+Esta semana me toca a mí apretar los dientes y enfocarme.
+aprovechar cada momento para prepararme para las proximas peleas.
+a respetar mi cuerpo, a exigirle más, a confiar en todo lo que he trabajado hasta ahora.
+Me queda poco antes de ir a juegos, y sé que el cuerpo se va a cansar, que habrá momentos de duda, de desgaste en silencio y solo.
+Pero al mismo tiempo, sé que tú estás viviendo lo mismo, preparándote para tu prueba, exigiéndote más, confiando en todo lo que trabajas has trabajado y en lo nuevo que aprenderas.
+
+Y quiero que lo sepas con claridad:
+todo ese esfuerzo que estás dando no es en vano.
+la mentalidad de disciplina, la constancia y la forma de no rendirte te van a llevar justo a donde tienes que estar. 
+Lo vas a lograr. Confío en ti más de lo que puedo explicar.
+se que eres capaz de todo lo que te propongas.
+
+Hay algo que pasa por mi mente.
+cuando dijiste que tú te prepararías para unas pruebas de la U mientras yo me preparaba para una pelea mia.
+que los dos nos ibamos a estar esforzando al mismo tiempo.
+Hoy la vida nos vuelve a poner en una situación parecida.
+Los dos entrenando, los dos luchando por algo importante, los dos creciendo… otra vez juntos, aunque sea desde la distancia.
+
+Sé que esta semana me harán falta tus ánimos.
+Me hará falta escucharte.
+Pero también sé que te llevo conmigo.
+En cada entrenamiento, en cada golpe, en cada respiración pesada cuando el cuerpo quiere parar pero la mente decide seguir.
+
+Tú te esfuerzas, y yo también lo haré.
+No por obligación, sino porque creo en lo que somos capaces de construir, incluso ahora.
+Vamos con todo, con fe, con disciplina y con el corazón firme.
+
+Y si así, sin estar juntos físicamente, podemos ser imparables…
+imagina cuando lo estemos.
+Imagina todo lo que viene cuando ya no haya distancia, solo camino compartido.
+
+Aquí sigo, preparándome, creyendo en ti y esperando el dia para verte de nuevo.
+`
   }
 
 ]
