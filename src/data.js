@@ -466,6 +466,51 @@ Imagina todo lo que viene cuando ya no haya distancia, solo camino compartido.
 
 Aquí sigo, preparándome, creyendo en ti y esperando el dia para verte de nuevo.
 `
+  },
+// Semana 9
+  {
+    week: 9,
+    title: "CON TODO",
+    text: `
+Semana 9 💌
+
+Mi niña hermosa,
+
+Esta semana es muy especial muy tensa y pesada para mí.
+
+Estoy en Limón para pelear en los JDN wooow es raro, pero cool sjsjs.
+Voy a pasar toda la semana aquí, y si todo sale bien, pelearé jueves y viernes.
+
+Físicamente me siento listo.
+He entrenado fuerte, me he preparado y sé que mi cuerpo está preparado para esto.
+
+Pero emocionalmente es una semana pesada.
+
+Mentalmente no me siento al 100%, pero aun así voy con todo.
+Voy con todo porque quiero lograrlo, porque quiero dar lo mejor de mí y demostrarme que sí puedo.
+
+Pero sobre todo, voy con todo gracias a ti.
+
+No quiero que pienses que yo te dedico solo mis golpes o una victoria.
+
+Yo te dedico todo.
+
+Te dedico mi tiempo,
+mis pensamientos,
+mis ganas de levantarme y seguir,
+cada instante antes, durante y después de mis peleas.
+
+Esta semana estoy aquí gracias a tu apoyo, a tu cariño y a la fuerza que me das.
+
+Porque sé que sin ti, sin tu ánimo y sin creer que estás conmigo, probablemente ya me hubiera echado para atrás.
+
+Tú haces que crea en mí incluso cuando la mente se cansa, y por eso voy a esforzarme para hacerlo bien… muy bien.
+
+Cada paso que doy en el ring, lo doy también por y gracias a ti.
+
+Vamos con todo
+Te quiero muchísimo.
+`
   }
 
 ]
@@ -823,22 +868,40 @@ Que este 2026 sea un buen año para ti.
   {
     id: 'plata',
     month: 1,
-    day: 26,
+    day: 22,
     title: 'Eres el unico apoyo que necesito 🥈',
-    tag: '26 de enero',
-    text: `Amor, hoy el mundo habla de flores y chocolates, pero mi detalle favorito sigue siendo tu existencia.
-Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
-Que este 26 de enero nos recuerde que lo nuestro no necesita testigos para ser real y hermoso.`
+    tag: '22 de enero',
+    text: `Mi niña hermosa,
+
+Hoy di lo mejor que tenía.
+
+Tal vez no fue el oro, pero sí fue un paso más en este camino que estoy recorriendo con todo el corazón.
+
+Gracias por apoyarme y darme fuerza durante esta semana.
+Sin ti, sé que me hubiera costado aún más mantenerme firme.
+hoy representa esfuerzo, aprendizaje y lo mucho que quiero seguir creciendo.
+
+Y eso también lo comparto contigo`
   },
   {
     id: 'Por-la-medalla',
     month: 1,
-    day: 27,
+    day: 23,
     title: 'Bailemos 🏅',
-    tag: '27 de enero',
-    text: `Amor, hoy el mundo habla de flores y chocolates, pero mi detalle favorito sigue siendo tu existencia.
-Eres mi calma, mi aventura y mi hogar, incluso a kilómetros.
-Que este 26 de enero nos recuerde que lo nuestro no necesita testigos para ser real y hermoso.`
+    tag: '23 de enero',
+    text: `Mi niña hermosa,
+
+No sé si llegue hasta este momento…
+pero si llegué, quiero que sepas que fue gracias a todo tu apoyo y al cariño que me diste en esta semana.
+
+Si lo logré, fue en gran parte por ti.
+Porque la fuerza que necesitaba para no echarme para atrás, tú me la regalaste.
+
+Y si no se dio como esperábamos, sé que tenía mucha ilusión, pero eso no quita nada de lo que siento ni de lo que me esforcé.
+
+Voy a seguir adelante, voy a seguir esforzándome,
+porque quiero mejorar…
+y quiero mejorar contigo.`
   },
   {
     id: 'san-valentin',
